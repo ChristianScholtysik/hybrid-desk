@@ -2,23 +2,24 @@ import { Redirect, Route } from "react-router-dom";
 import { book, person, help } from "ionicons/icons";
 import {
   IonApp,
-  IonHeader,
   IonIcon,
   IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonToolbar,
- 
   IonTabs,
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import LandingPage from "./components/LandingPage";
+// import Login from "./components/Login";
+// import PostLogin from "./components/PostLogin";
 
 import { Tab1 } from "./pages/Tab1";
 import { Tab2 } from "./pages/Tab2";
 import { Tab3 } from "./pages/Tab3";
-import { HeaderExample } from "./components/Header";
+
+// import { HeaderExample } from "./components/Header";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -43,15 +44,22 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonHeader>
-      <IonToolbar>
-        <HeaderExample />
-      </IonToolbar>
-    </IonHeader>
+    {/* <Route path="/signup" element={<Signup />} />
+
+        <Route path="/post-login" element={<PostLogin />} /> */}
 
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          <Route exact path="/landing">
+            <LandingPage />
+          </Route>
+          {/* <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/post-login">
+            <PostLogin />
+          </Route> */}
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
@@ -64,6 +72,9 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
+          {/* <Route exact path="/logout">
+              <Logout />
+            </Route> */}
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
