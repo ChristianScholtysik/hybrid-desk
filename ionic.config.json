@@ -1,0 +1,8 @@
+{
+  "name": "hybrid-desk",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "eeccd4da"
+}
