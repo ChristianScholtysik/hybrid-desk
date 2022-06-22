@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
 
-const Tab3: React.FC = () => {
+export const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -22,4 +22,4 @@ const Tab3: React.FC = () => {
   );
 };
 
-export default Tab3;
+

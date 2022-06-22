@@ -1,0 +1,35 @@
+ion-fab-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border: 6px solid white;
+}
+
+.Avatar {
+  width: 70px;
+  height: 70px;
+  /* border: 5px solid white; */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  margin-top: 5px;
+}
+
+.hallo {
+  color: white;
+}
+
+.history_button person_button {
+  font-size: small;
+}
+
+.button-icon {
+  font-size: 25px;
+}
+
+.IonFabButton {
+  font-size: 9px;
+}
