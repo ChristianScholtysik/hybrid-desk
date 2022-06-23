@@ -31,5 +31,8 @@ ion-fab-button {
 }
 
 .IonFabButton {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
   font-size: 9px;
 }
