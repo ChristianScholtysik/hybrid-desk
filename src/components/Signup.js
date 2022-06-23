@@ -2,6 +2,9 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import { IonTitle, IonButton, IonLabel, IonInput, IonItem } from "@ionic/react";
+import "./Signup.css";
+import UploadAvatar from "./UploadAvatar";
 
 const Signup = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -19,7 +22,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/user/signup`,
+        `${process.env.REACT_APP_API_URL}/registration`,
         loginData
       );
       const token = res.headers.authorization;
@@ -34,33 +37,68 @@ const Signup = () => {
   if (isAuthenticated) return <Navigate to="../post-login" />;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="my-3 row">
-        <label htmlFor="email" className="col-sm-2 col-form-label">
-          Email
-        </label>
-        <div className="col-sm-5">
-          <input type="text" className="form-control" id="email" name="email" />
-        </div>
+    <>
+      <div className="container">
+        <IonTitle class="headline">{}</IonTitle>
+        <form className="ion-padding">
+          <IonItem>
+            <IonLabel position="floating">Firstname</IonLabel>
+            <IonInput />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Lastname</IonLabel>
+            <IonInput />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Email</IonLabel>
+            <IonInput type="email" />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Password</IonLabel>
+            <IonInput type="password" />
+          </IonItem>
+          {/* Image Upload Component */}
+          <IonLabel position="start">Choose Profile Picture</IonLabel>
+          <IonItem>
+            <IonInput type="file" />
+          </IonItem>
+          {/* <UploadAvatar /> */}
+          <IonButton className="ion-margin-top" type="submit" expand="block">
+            Sign Up
+          </IonButton>
+        </form>
       </div>
-      <div className="mb-3 row">
-        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-          Password
-        </label>
-        <div className="col-sm-5">
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword"
-            name="password"
-          />
-        </div>
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Jetzt registrieren
-      </button>
-    </form>
+    </>
   );
 };
+
+//     <form onSubmit={handleSubmit}>
+//       <div className="my-3 row">
+//         <label htmlFor="email" className="col-sm-2 col-form-label">
+//           Email
+//         </label>
+//         <div className="col-sm-5">
+//           <input type="text" className="form-control" id="email" name="email" />
+//         </div>
+//       </div>
+//       <div className="mb-3 row">
+//         <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+//           Password
+//         </label>
+//         <div className="col-sm-5">
+//           <input
+//             type="password"
+//             className="form-control"
+//             id="inputPassword"
+//             name="password"
+//           />
+//         </div>
+//       </div>
+//       <button type="submit" className="btn btn-primary">
+//         Jetzt registrieren
+//       </button>
+//     </form>
+//   );
+// };
 
 export default Signup;
