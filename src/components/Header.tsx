@@ -18,6 +18,7 @@ import {
 import { book, person, moon } from "ionicons/icons";
 
 import Logo from "./img/HDisk_Logo.svg";
+import "./main.css";
 import "./Header.css";
 import { userInfo } from "os";
 import DarkMode from "../components/DarkMode";
@@ -30,6 +31,7 @@ export const Header: React.FC = () => {
         <IonHeader>
           <IonTitle size="large">
             <img src={Logo} alt="Logo" className="logo" />
+
             <h2 className="hallo">
               Hallo, ich funktioniere nicht weil Ivana das Backend nicht fertig
               gemacht hat
@@ -41,15 +43,15 @@ export const Header: React.FC = () => {
       </IonToolbar>
 
       <IonContent fullscreen>
-        <IonItem lines="none">
-          <IonIcon slot="start" icon={moon} />
-          {/* <IonLabel>Dark Mode</IonLabel> */}
-          <IonToggle
+        {/* <IonItem lines="none">
+          <IonIcon slot="start" icon={moon} /> */}
+        {/* <IonLabel>Dark Mode</IonLabel> */}
+        {/* <IonToggle
             slot="start"
             name="darkMode"
             onIonChange={toggleDarkModeHandler}
           />
-        </IonItem>
+        </IonItem> */}
         <IonFab
           color="secondary"
           vertical="top"
@@ -66,15 +68,14 @@ export const Header: React.FC = () => {
             </IonAvatar>
           </IonFabButton>
           <IonFabList side="bottom">
-            <IonFabButton className="IonFabButton">
+            <IonFabButton>
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
-            <div className="profile_button">Profile</div>
-
+            <div className="profile_button"></div>
             <IonFabButton>
               <IonIcon icon={book} className="button-icon" />
             </IonFabButton>
-            <div className="history_button">History</div>
+            <div className="history_button"></div>
           </IonFabList>
         </IonFab>
       </IonContent>

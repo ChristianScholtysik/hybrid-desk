@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
 import { Header } from "./Header";
+import "./main.css";
 const PostLogin = () => {
   //Wenn User authentifiziert, wird Header Component angezeigt
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
@@ -22,7 +23,7 @@ const PostLogin = () => {
       console.log(error);
     }
   };
- 
+
   return (
     <>
       {isAuthenticated ? (

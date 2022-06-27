@@ -1,0 +1,231 @@
+.btn {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0.15rem;
+  background-color: #4dbfd6;
+  /* padding: 20px; */
+  font-size: 0.75em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px #ff8800 solid; */
+}
+
+/* .box div {
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      border-color: red;
+    } */
+
+.group {
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  /* border: 2px solid greenyellow; */
+}
+
+.btn:active {
+  background: #d41ba3;
+}
+.btn:hover {
+  background: #d41ba3;
+}
+
+.btn:focus {
+  background: #d41ba3;
+}
+
+.grid-design {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  width: 150px;
+}
+
+/* .button {
+      
+    } */
+
+.container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+.headline {
+  font-weight: 800;
+  font-size: large;
+  color: #5d5d5d !important;
+  text-transform: uppercase !important;
+}
+
+.button {
+  color: white;
+}
+
+.seatcontainer {
+  width: 50%;
+  align-content: center;
+}
+.container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+/* swiper*/
+
+:root {
+  --swiper-navigation-color: #d41ba3 !important;
+  --swiper-theme-color: #d41ba3 !important;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.headline {
+  font-size: larger;
+  font-weight: bolder;
+  letter-spacing: 0.09em;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  color: #d41ba3;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #d41ba3;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .swiper-pagination-bullet-active {
+      background: #d41ba3;
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+      color: #d41ba3;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+      color: #d41ba3;
+    }
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+      color: #d41ba3;
+    }
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+      color: #d41ba3;
+    }
+    .swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal,
+    .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+    .swiper-vertical
+      > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+      color: #d41ba3;
+    }
+    
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+      color: #d41ba3;
+    }
+    
+    .swiper {
+      color: #d41ba3;
+    }
+    
+    .swiper-pagination {
+      color: red;
+    }
+    
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+      color: red;
+    }
+    
+    .swiper-pagination >>> .swiper-pagination-bullet {
+      opacity: 1;
+      border: white solid 1px;
+      background-color: transparent;
+    }
+    .swiper-pagination >>> .swiper-pagination-bullet-active {
+      background-color: red;
+    }
+    
+    .swiper-pagination-progressbar-fill {
+      border: 2px solid #d41ba3;
+      border-radius: 5px;
+    }
+    
+    .swiper-pagination-progressbar {
+      background-color: red;
+      border-radius: 5px;
+    } */

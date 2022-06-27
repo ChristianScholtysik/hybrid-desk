@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IonButton } from "@ionic/react";
+import "./main.css";
 
 function UploadAvatar() {
   const [fileData, setFileData] = useState();

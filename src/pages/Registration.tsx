@@ -1,12 +1,5 @@
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
+import { IonContent, IonPage } from "@ionic/react";
 import Signup from "../components/Signup";
-import Header from "../components/Header";
 import "./Registration.css";
 
 const Registration: React.FC = () => {
@@ -23,7 +16,6 @@ const Registration: React.FC = () => {
           </IonToolbar> */}
 
       <IonContent>
-        <Header />
         {/* headline im container */}
         <Signup />
       </IonContent>
