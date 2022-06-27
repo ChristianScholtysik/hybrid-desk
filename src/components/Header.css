@@ -5,6 +5,13 @@ ion-fab-button {
   border: 6px solid white;
 }
 
+/* ion-fab-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border: 6px solid rgb(0, 0, 0);
+} */
+
 .Avatar {
   width: 70px;
   height: 70px;
