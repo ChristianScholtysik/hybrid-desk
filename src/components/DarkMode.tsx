@@ -1,11 +1,4 @@
-import {
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonToggle,
-} from "@ionic/react";
+import { IonContent, IonIcon, IonItem, IonList, IonToggle } from "@ionic/react";
 import { moon } from "ionicons/icons";
 
 const DarkMode: React.FC = () => {

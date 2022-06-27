@@ -1,9 +1,11 @@
 import axios from "axios";
+import { IonTitle, IonButton } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import "./main.css";
 
-const Login = () => {
+const LoginPage = () => {
   //bei Form Submit post request an die API schicken
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Login auf die /post-login route navigieren
@@ -32,36 +34,33 @@ const Login = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to="../post-login" />;
+  if (isAuthenticated) return <Redirect to="../post-login" />;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="my-3 row">
-        <label htmlFor="email" className="col-sm-2 col-form-label">
-          Email
-        </label>
-        <div className="col-sm-5">
-          <input type="text" className="form-control" id="email" name="email" />
+    <div className="container">
+      <IonTitle className="headline">Login </IonTitle>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Email</label>
+          <div>
+            <input type="text" id="email" name="email" />
+          </div>
         </div>
-      </div>
-      <div className="mb-3 row">
-        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-          Password
-        </label>
-        <div className="col-sm-5">
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword"
-            name="password"
-          />
+        <div>
+          <label htmlFor="inputPassword">Password</label>
+          <div>
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword"
+              name="password"
+            />
+          </div>
         </div>
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Jetzt einloggen
-      </button>
-    </form>
+        <IonButton type="submit">Jetzt einloggen</IonButton>
+      </form>
+    </div>
   );
 };
 
-export default Login;
+export default LoginPage;

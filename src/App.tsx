@@ -11,13 +11,12 @@ import {
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import LandingPage from "./components/LandingPage";
 // import Login from "./components/Login";
-import PostLogin from "./components/PostLogin";
+// import PostLogin from "./components/PostLogin";
 
-import { Tab1 } from "./pages/Tab1";
+import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-import { Tab3 } from "./pages/Tab3";
+import { Main } from "./pages/Main";
 
 // import { HeaderExample } from "./components/Header";
 
@@ -49,43 +48,41 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
+          {/* <Route exact path="/"></Route> */}
           {/* <Route exact path="/login">
             <Login />
           </Route> */}
-          <Route exact path="/post-login">
-            <PostLogin />
-          </Route>
-          <Route exact path="/tab1">
-            <Tab1 />
+          {/* <Route exact path="/post-login">
+            <Login /> 
+          </Route>*/}
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/registration">
             <Registration />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route exact path="/main">
+            <Main />
           </Route>
-          {/* <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route> */}
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
           {/* <Route exact path="/logout">
               <Logout />
             </Route> */}
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="login" href="/login">
             <IonIcon icon={lockOpen} />
             <IonLabel>Login</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Registration" href="/Registration">
+          <IonTabButton tab="registration" href="/registration">
             <IonIcon icon={key} />
             <IonLabel>Sign up</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="main" href="/main">
             <IonIcon icon={person} />
-            <IonLabel>Profile</IonLabel>
+            <IonLabel>Main</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

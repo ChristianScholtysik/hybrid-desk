@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { IonTitle, IonButton, IonLabel, IonInput, IonItem } from "@ionic/react";
-import "./Signup.css";
-import UploadAvatar from "./UploadAvatar";
+
+import "./main.css";
 
 const Signup = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -34,7 +34,7 @@ const Signup = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to="../post-login" />;
+  if (isAuthenticated) return <Redirect to="../post-login" />;
 
   return (
     <>

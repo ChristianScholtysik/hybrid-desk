@@ -18,6 +18,14 @@
   text-transform: uppercase;
 }
 
+.top-headline {
+  align-items: center;
+  font-weight: 800;
+  font-size: larger;
+  color: #4dbfd6;
+  text-transform: uppercase;
+}
+
 .container p {
   font-size: 16px;
   line-height: 22px;
