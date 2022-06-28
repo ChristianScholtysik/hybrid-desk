@@ -16,11 +16,13 @@ const DateTime: React.FC = () => {
   return (
     <IonDatetime
       color="primary"
-      minuteValues="0,15,30,45"
+      // minuteValues="0,15,30,45"
+      presentation="date"
       isDateEnabled={isWeekday}
       showDefaultButtons={true}
       min="2022-01-01T00:00:00"
       max="2222-12-31T23:59:59"
+      onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}
     ></IonDatetime>
   );
 };
