@@ -37,24 +37,32 @@ const LoginPage = () => {
   if (isAuthenticated) return <Redirect to="../post-login" />;
 
   return (
-    <div className="container">
-      <IonTitle className="top-headline">Login </IonTitle>
-      <form onSubmit={handleSubmit}>
-        <IonItem>
-          <IonLabel position="floating">
-            <p>Email</p>
-          </IonLabel>
-          <IonInput type="email" />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">
-            <p>Password</p>
-          </IonLabel>
-          <IonInput type="password" />
-        </IonItem>
-        <IonButton type="submit">Login</IonButton>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="my-3 row">
+        <label htmlFor="email" className="col-sm-2 col-form-label">
+          Email
+        </label>
+        <div className="col-sm-5">
+          <input type="text" className="form-control" id="email" name="email" />
+        </div>
+      </div>
+      <div className="mb-3 row">
+        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+          Password
+        </label>
+        <div className="col-sm-5">
+          <input
+            type="password"
+            className="form-control"
+            id="inputPassword"
+            name="password"
+          />
+        </div>
+      </div>
+      <button type="submit" className="btn btn-primary">
+        LogIn
+      </button>
+    </form>
   );
 };
 

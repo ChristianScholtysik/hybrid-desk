@@ -7,7 +7,17 @@ import {
   IonTitle,
 } from "@ionic/react";
 import "./main.css";
-function Rooms() {
+
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+const Rooms = () => {
+  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+
+  const handleClick = (e) => {
+    console.log(`${bookingUrl}&room=${e.target.id}`);
+    setBookingUrl(`${bookingUrl}&room=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+  };
   return (
     <IonContent>
       <div className="container">
@@ -16,14 +26,14 @@ function Rooms() {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonButton router-direction type="submit" id="desk">
+              <IonButton id="workplace" onClick={handleClick}>
                 Workplace
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton router-direction type="submit" id="meetingroom">
+              <IonButton id="meetingroom" onClick={handleClick}>
                 Meetingroom
               </IonButton>
             </IonCol>
@@ -32,5 +42,5 @@ function Rooms() {
       </div>
     </IonContent>
   );
-}
+};
 export default Rooms;

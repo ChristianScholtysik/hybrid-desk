@@ -1,9 +1,12 @@
 import { IonDatetime } from "@ionic/react";
-
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 import "./main.css";
 
-const DateTime: React.FC = () => {
-  const isWeekday = (dateString: string) => {
+const DateTime = () => {
+  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+
+  const isWeekday = (dateString) => {
     const date = new Date(dateString);
     const utcDay = date.getUTCDay();
 
@@ -21,7 +24,10 @@ const DateTime: React.FC = () => {
       showDefaultButtons={true}
       min="2022-01-01T00:00:00"
       max="2222-12-31T23:59:59"
-      onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}
+      onIonChange={(e) => {
+        console.log(`${bookingUrl}&datetime=${e.detail.value}`);
+        setBookingUrl(`${bookingUrl}&datetime=${e.detail.value}`);
+      }}
     ></IonDatetime>
   );
 };

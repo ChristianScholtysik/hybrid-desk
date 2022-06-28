@@ -7,30 +7,41 @@ import {
   IonCol,
 } from "@ionic/react";
 import "./main.css";
-const Location: React.FC = () => {
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+const Location = () => {
+  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+
+  const handleClick = (e) => {
+    console.log(`${bookingUrl}?location=${e.target.id}`);
+    setBookingUrl(`${bookingUrl}?location=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+  };
+
   return (
     <IonContent className="container">
       <div className="container">
         <IonTitle className="headline">Choose your Location</IonTitle>
         <div className="container"></div>
+
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonButton router-direction type="submit" id="Berlin">
+              <IonButton id="berlin" onClick={handleClick}>
                 Berlin
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton router-direction type="submit" id="Hamburg">
+              <IonButton id="hamburg" onClick={handleClick}>
                 Hamburg
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton router-direction type="submit" id="Munich">
+              <IonButton id="munich" onClick={handleClick}>
                 Munich
               </IonButton>
             </IonCol>

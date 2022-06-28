@@ -34,6 +34,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import PostLogin from "./components/PostLogin";
 
 setupIonicReact();
 
@@ -48,9 +49,13 @@ const App: React.FC = () => (
           <Route exact path="/registration">
             <Registration />
           </Route>
+
           <Route exact path="/main">
             <Main />
           </Route>
+          {/* <Route exact path="/post-login">
+            <PostLogin />
+          </Route> */}
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
