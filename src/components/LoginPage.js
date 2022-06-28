@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IonTitle, IonButton } from "@ionic/react";
+import { IonTitle, IonButton, IonItem, IonLabel, IonInput } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
@@ -38,26 +38,21 @@ const LoginPage = () => {
 
   return (
     <div className="container">
-      <IonTitle className="headline">Login </IonTitle>
+      <IonTitle className="top-headline">Login </IonTitle>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <div>
-            <input type="text" id="email" name="email" />
-          </div>
-        </div>
-        <div>
-          <label htmlFor="inputPassword">Password</label>
-          <div>
-            <input
-              type="password"
-              className="form-control"
-              id="inputPassword"
-              name="password"
-            />
-          </div>
-        </div>
-        <IonButton type="submit">Jetzt einloggen</IonButton>
+        <IonItem>
+          <IonLabel position="floating">
+            <p>Email</p>
+          </IonLabel>
+          <IonInput type="email" />
+        </IonItem>
+        <IonItem>
+          <IonLabel position="floating">
+            <p>Password</p>
+          </IonLabel>
+          <IonInput type="password" />
+        </IonItem>
+        <IonButton type="submit">Login</IonButton>
       </form>
     </div>
   );

@@ -39,31 +39,40 @@ const Signup = () => {
   return (
     <>
       <div className="container">
-        <IonTitle class="headline">{}</IonTitle>
         <form className="ion-padding">
           <IonItem>
-            <IonLabel position="floating">Firstname</IonLabel>
+            <IonLabel position="floating">
+              <p>Firstname</p>
+            </IonLabel>
             <IonInput />
           </IonItem>
           <IonItem>
-            <IonLabel position="floating">Lastname</IonLabel>
+            <IonLabel position="floating">
+              <p>Lastname</p>
+            </IonLabel>
             <IonInput />
           </IonItem>
           <IonItem>
-            <IonLabel position="floating">Email</IonLabel>
+            <IonLabel position="floating">
+              <p>Email</p>
+            </IonLabel>
             <IonInput type="email" />
           </IonItem>
           <IonItem>
-            <IonLabel position="floating">Password</IonLabel>
+            <IonLabel position="floating">
+              <p>Password</p>
+            </IonLabel>
             <IonInput type="password" />
           </IonItem>
           {/* Image Upload Component */}
-          <IonLabel position="start">Choose Profile Picture</IonLabel>
+          <IonLabel position="start">
+            <p>Upload Profile Picture</p>
+          </IonLabel>
           <IonItem>
             <IonInput type="file" />
           </IonItem>
           {/* <UploadAvatar /> */}
-          <IonButton className="ion-margin-top" type="submit" expand="block">
+          <IonButton className="ion-margin-top" type="submit">
             Sign Up
           </IonButton>
         </form>

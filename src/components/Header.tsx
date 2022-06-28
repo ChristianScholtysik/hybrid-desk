@@ -1,35 +1,26 @@
-import axios from "axios";
-import { useState, useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
 import {
   IonHeader,
   IonToolbar,
   IonTitle,
   IonContent,
   IonFab,
-  IonLabel,
-  IonToggle,
   IonFabButton,
   IonFabList,
   IonAvatar,
   IonIcon,
-  IonItem,
 } from "@ionic/react";
-import { book, person, moon } from "ionicons/icons";
+import { book, person } from "ionicons/icons";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
-import { userInfo } from "os";
-import DarkMode from "../components/DarkMode";
 
 export const Header: React.FC = () => {
-  const toggleDarkModeHandler = () => document.body.classList.toggle("dark");
   return (
     <>
       <IonToolbar color="primary">
         <IonHeader>
-          <IonTitle size="large">
+          <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
 
             <h2 className="hallo">

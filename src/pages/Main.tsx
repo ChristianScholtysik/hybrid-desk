@@ -13,39 +13,39 @@ import { Overview } from "../components/Overview";
 import { Seats } from "../components/Seats";
 import Rooms from "../components/Rooms";
 
-export const Main: React.FC = () => {
+const Main: React.FC = () => {
   return (
     <IonPage>
       <Header />
-      <IonContent>
-        <Swiper
-          direction={"vertical"}
-          pagination={{
-            clickable: false,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <Location />
-          </SwiperSlide>
 
-          <SwiperSlide>
-            <DateTime />
-          </SwiperSlide>
+      <Swiper
+        direction={"vertical"}
+        pagination={{
+          clickable: false,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <Location />
+        </SwiperSlide>
 
-          <SwiperSlide>
-            <Rooms />
-          </SwiperSlide>
+        <SwiperSlide>
+          <DateTime />
+        </SwiperSlide>
 
-          <SwiperSlide>
-            <Seats />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Overview />
-          </SwiperSlide>
-        </Swiper>
-      </IonContent>
+        <SwiperSlide>
+          <Rooms />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Seats />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Overview />
+        </SwiperSlide>
+      </Swiper>
     </IonPage>
   );
 };
+export default Main;

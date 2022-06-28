@@ -36,7 +36,3 @@
 .container a {
   text-decoration: none;
 }
-
-.no-scroll .scroll-content {
-  overflow: hidden;
-}
