@@ -1,22 +1,43 @@
-import { IonButton, IonTitle } from "@ionic/react";
+import {
+  IonButton,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+} from "@ionic/react";
 import "./main.css";
 const Location: React.FC = () => {
   return (
-    <div className="container">
-      <IonTitle className="headline">Choose your location</IonTitle>
-
-      <IonButton router-direction type="submit" id="hamburg">
-        Hamburg
-      </IonButton>
-
-      <IonButton router-direction type="submit" id="berlin">
-        Berlin
-      </IonButton>
-
-      <IonButton router-direction type="submit" id="munich">
-        Munich
-      </IonButton>
-    </div>
+    <IonContent className="container">
+      <div className="container">
+        <IonTitle className="headline">Choose your Location</IonTitle>
+        <div className="container"></div>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <IonButton router-direction type="submit" id="Berlin">
+                Berlin
+              </IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <IonButton router-direction type="submit" id="Hamburg">
+                Hamburg
+              </IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <IonButton router-direction type="submit" id="Munich">
+                Munich
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </div>
+    </IonContent>
   );
 };
 export default Location;

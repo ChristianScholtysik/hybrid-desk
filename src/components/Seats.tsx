@@ -5,9 +5,9 @@ import "./main.css";
 
 export const Seats: React.FC = () => (
   <IonContent>
-    <IonTitle className="headline">choose your Seat...</IonTitle>
-
     <div className="container">
+      <IonTitle className="headline">choose your Seat...</IonTitle>
+
       <div className="box">
         <div className="group">
           <div>

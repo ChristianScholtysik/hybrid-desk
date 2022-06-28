@@ -11,14 +11,10 @@ import {
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-// import Login from "./components/Login";
-// import PostLogin from "./components/PostLogin";
 
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-import { Main } from "./pages/Main";
-
-// import { HeaderExample } from "./components/Header";
+import Main from "./pages/Main";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -43,18 +39,9 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    {/* <Route path="/signup" element={<Signup />} /> */}
-
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          {/* <Route exact path="/"></Route> */}
-          {/* <Route exact path="/login">
-            <Login />
-          </Route> */}
-          {/* <Route exact path="/post-login">
-            <Login /> 
-          </Route>*/}
           <Route exact path="/login">
             <Login />
           </Route>
@@ -67,9 +54,6 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
-          {/* <Route exact path="/logout">
-              <Logout />
-            </Route> */}
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="login" href="/login">

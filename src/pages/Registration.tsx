@@ -1,25 +1,27 @@
-import { IonContent, IonPage } from "@ionic/react";
+import {
+  IonContent,
+  IonPage,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
 import Signup from "../components/Signup";
 import "./Registration.css";
+import Logo from "../components/img/HDisk_Logo.svg";
 
 const Registration: React.FC = () => {
   return (
     <IonPage>
-      {/*<IonToolbar>
-          <IonTitle class="top-headline">Registration</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Registration</IonTitle>
-          </IonToolbar> */}
-
       <IonContent>
-        {/* headline im container */}
+        <IonToolbar color="primary">
+          <IonHeader>
+            <IonTitle>
+              <img src={Logo} alt="Logo" className="logo" />
+            </IonTitle>
+          </IonHeader>
+        </IonToolbar>
         <Signup />
       </IonContent>
-      {/* </IonContent> */}
     </IonPage>
   );
 };

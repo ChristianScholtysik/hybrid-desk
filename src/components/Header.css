@@ -18,19 +18,29 @@ ion-fab-button {
   /* border: 5px solid white; */
 }
 
-/* .logo {
-  display: flex;
-  justify-content: center;
-  width: 350px;
-  margin-top: 5px;
-} */
-
 .logo {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 60% !important;
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
+
+.ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center !important;
+}
+/* 
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  margin-top: 0.5em;
+} */
 
 .hallo {
   color: white;
