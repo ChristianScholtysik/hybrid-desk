@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
-import { Header } from "./Header";
+
 import "./main.css";
 const PostLogin = () => {
   //Wenn User authentifiziert, wird Header Component angezeigt
@@ -28,7 +28,14 @@ const PostLogin = () => {
     <>
       {isAuthenticated ? (
         <>
-          <Header />
+          <h1>Du bist eingeloggt und kannst buchen</h1>
+          <button onClick={handleClick}>Userinfos anzeigen</button>
+          {userInfo && (
+            <>
+              <p>Deine Id in der DB ist {userInfo._id}</p>
+              <p>Deine Mailadresse ist {userInfo.email}</p>
+            </>
+          )}
         </>
       ) : (
         <Redirect to="/" />

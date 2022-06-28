@@ -10,6 +10,10 @@ export const AuthContext = createContext();
 
 const AuthState = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
+  //base URL um neue Reservierung anzulegen (soll POST request an diesen Endpunkt schicken)
+  const [bookingUrl, setBookingUrl] = useState(
+    `${process.env.REACT_APP_API_URL}/reservation`
+  );
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -34,7 +38,9 @@ const AuthState = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, setIsAuthenticated, bookingUrl, setBookingUrl }}
+    >
       {children}
     </AuthContext.Provider>
   );

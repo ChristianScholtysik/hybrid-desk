@@ -1,4 +1,4 @@
-import { IonContent, IonPage } from "@ionic/react";
+import { IonPage } from "@ionic/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Location from "../components/Location";
 
@@ -7,10 +7,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import Header from "../components/Header";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import DateTime from "../components/DateTime";
 import { Overview } from "../components/Overview";
-import { Seats } from "../components/Seats";
+import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
 
 const Main: React.FC = () => {
