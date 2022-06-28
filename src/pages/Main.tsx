@@ -21,7 +21,7 @@ const Main: React.FC = () => {
       <Swiper
         direction={"vertical"}
         pagination={{
-          clickable: false,
+          clickable: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
