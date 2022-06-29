@@ -6,11 +6,15 @@ import "./main.css";
 
 const Seats = () => {
   const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+  //im useEffect:
+  // gibt uns alle available seats auf basis der booking Url bzw. der query parameter der booking Url
+  // diese Seats sollen dann stück state speichern available Seats
+  //consitional rendering when available seats einen truthy value hat,  dann mappe über available seats und zeig für jeden seat einen button mit der Seatnumber
+  axios.get(bookingUrl).then.catch;
 
+  //wenn ein spezieller sitzplatz ausgewählt wurde:
   const handleClick = (e) => {
-    // console.log(`${bookingUrl}&seat=${e.target.id}`);
-    // setBookingUrl(`${bookingUrl}&seat=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
-    //an diesem punkt wollen wir die seatid in state (context) speichern
+    //an diesem punkt wollen wir die seatid/place_id in state (context) speichern
   };
   return (
     <IonContent>
