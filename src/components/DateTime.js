@@ -19,7 +19,8 @@ const DateTime = () => {
   return (
     <IonDatetime
       color="primary"
-      minuteValues="0,15,30,45"
+      presentation="date"
+      // minuteValues="0,15,30,45"
       isDateEnabled={isWeekday}
       showDefaultButtons={true}
       min="2022-01-01T00:00:00"
