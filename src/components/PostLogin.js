@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IonContent } from "@ionic/react";
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
@@ -29,6 +30,7 @@ const PostLogin = () => {
       {isAuthenticated ? (
         <>
           <h1>Du bist eingeloggt und kannst buchen</h1>
+          <button>hier lang</button>
           <button onClick={handleClick}>Userinfos anzeigen</button>
           {userInfo && (
             <>

@@ -17,6 +17,9 @@ const Rooms = () => {
   const handleClick = (e) => {
     console.log(`${bookingUrl}&room=${e.target.id}`);
     setBookingUrl(`${bookingUrl}&room=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+
+    //hier muss der get request an die Api geschickt werden (getallavaiableseatbylocation)
+    //mit der response könnt ihr dann den flooprlan anzeigen
   };
   return (
     <IonContent>

@@ -54,9 +54,9 @@ const App: React.FC = () => (
           <Route exact path="/main">
             <Main />
           </Route>
-          {/* <Route exact path="/post-login">
+          <Route exact path="/post-login">
             <PostLogin />
-          </Route> */}
+          </Route>
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>

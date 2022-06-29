@@ -14,6 +14,10 @@ import {
 import { location, alarm, home } from "ionicons/icons";
 import "./main.css";
 
+//den context importieren & konsumieren und location, datetime, meetingraum oder sitzplatz undseatid/number verfügbar machen (aus context/global state)
+//aus diesen infomationen setzt ihr eine post request zusammen (infos im body, userid aus params) und schickt sie an
+//createreservation endpunkt
+
 export const Overview: React.FC = () => (
   <IonContent>
     <div className="container">

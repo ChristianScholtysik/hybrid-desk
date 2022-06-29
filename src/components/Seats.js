@@ -8,8 +8,9 @@ const Seats = () => {
   const { bookingUrl, setBookingUrl } = useContext(AuthContext);
 
   const handleClick = (e) => {
-    console.log(`${bookingUrl}&seat=${e.target.id}`);
-    setBookingUrl(`${bookingUrl}&seat=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+    // console.log(`${bookingUrl}&seat=${e.target.id}`);
+    // setBookingUrl(`${bookingUrl}&seat=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+    //an diesem punkt wollen wir die seatid in state (context) speichern
   };
   return (
     <IonContent>
@@ -19,25 +20,37 @@ const Seats = () => {
         <div className="box">
           <div className="group">
             <div>
-              <button className="btn" id="" onClick={handleClick}>
+              <button
+                className="btn"
+                id="62bb026c7da22ddd14563323"
+                onClick={handleClick}
+              >
                 1
               </button>
-              <button className="btn">2</button>
+              <button
+                className="btn"
+                id="62bb1265e68fb26334a1d059"
+                onClick={handleClick}
+              >
+                2
+              </button>
             </div>
             <div>
               <button
                 className="btn"
-                id="62a2468974200652dc2378e4"
+                id="62bb1281e68fb26334a1d05b"
                 onClick={handleClick}
               >
                 3
               </button>
-              <button className="btn">4</button>
+              {/* <button className="btn" id={seat.id} onClick={handleClick}>
+                4
+              </button> */}
             </div>
           </div>
           <div className="group">
             <div>
-              <button className="btn">5</button>
+              {/* <button className="btn">{seat.number}</button> */}
               <button className="btn">6</button>
             </div>
             <div>
