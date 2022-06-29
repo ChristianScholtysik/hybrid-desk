@@ -11,11 +11,12 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Location = () => {
-  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+  const { bookingUrl, setBookingUrl, setLocation } = useContext(AuthContext);
 
   const handleClick = (e) => {
     console.log(`${bookingUrl}?location=${e.target.id}`);
     setBookingUrl(`${bookingUrl}?location=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+    setLocation(e.target.id);
   };
 
   return (

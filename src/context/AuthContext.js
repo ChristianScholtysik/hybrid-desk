@@ -14,6 +14,7 @@ const AuthState = ({ children }) => {
   const [bookingUrl, setBookingUrl] = useState(
     `${process.env.REACT_APP_API_URL}/reservation`
   );
+  const [location, setLocation] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");

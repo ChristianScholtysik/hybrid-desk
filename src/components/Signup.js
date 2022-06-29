@@ -37,7 +37,7 @@ const Signup = () => {
     }
   };
 
-  if (isAuthenticated) return <Redirect to="/main" />;
+  if (isAuthenticated) return <Redirect to="../main" />;
 
   return (
     <form onSubmit={handleSubmit}>
