@@ -21,6 +21,7 @@ const DateTime = () => {
   return (
     <IonDatetime
       color="primary"
+      displayFormat="YYYY-MM-DD"
       presentation="date"
       // minuteValues="0,15,30,45"
       isDateEnabled={isWeekday}
