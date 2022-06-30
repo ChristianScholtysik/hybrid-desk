@@ -2,46 +2,48 @@ import axios from "axios";
 import React from "react";
 import { IonContent, IonTitle, IonButton } from "@ionic/react";
 import { useContext, useState, useEffect } from "react";
-import axios from "axios";
+
 import { AuthContext } from "../context/AuthContext";
 
 import "./main.css";
 
-
-// const Seats = () => {
-//   const { bookingUrl, setBookingUrl } = useContext(AuthContext);
-//im useEffect:
-// gibt uns alle available seats auf basis der booking Url bzw. der query parameter der booking Url
-// diese Seats sollen dann stück state speichern available Seats
-//consitional rendering when available seats einen truthy value hat,  dann mappe über available seats und zeig für jeden seat einen button mit der Seatnumber
-// axios.get(bookingUrl).then.catch;
 function Seats() {
-  const [place, getPlace] = useState([]);
+  const [places, setPlaces] = useState([]);
 
-
-  const url = "http://localhost:5000/";
+  const { bookingUrl, setSelectedSeat } = useContext(AuthContext);
 
   useEffect(() => {
+    const getAvailableSeats = () => {
+      axios
+        .get(bookingUrl)
+        .then((response) => {
+          console.log(response.data);
+          setPlaces(response.data);
+        })
+        .catch((error) => console.error(`error: ${error}`));
+    };
     getAvailableSeats();
-  }, []);
+  }, [bookingUrl]);
 
-  const getAvailableSeats = () => {
-    axios
-      .get(`${url}place`)
-      .then((response) => {
-
-        const getAllPlace = response.data.place.getAllPlace;
-        getPlace(getAllPlace);
-
-      })
-      .catch((error) => console.error(`error: ${error}`));
-  };
   return (
-    <div>
-      <IonButton seats={place}></IonButton>
-    </div>
-  );
+    <>
+      {places.length > 0 ? (
+        <>
+          {places.map((place) => (
+            // Stellt einen anderen Button dar wenn das date aus dem context einem date aus place.unavailable entspricht als sonst
 
+            <div key={place._id}>
+              <IonButton onClick={() => setSelectedSeat(place._id)}>
+                {place.seat}
+              </IonButton>
+            </div>
+          ))}
+        </>
+      ) : (
+        "No available seats in your selected location"
+      )}
+    </>
+  );
 }
 
 export default Seats;
@@ -49,7 +51,6 @@ export default Seats;
 //   //wenn ein spezieller sitzplatz ausgewählt wurde:
 //   const handleClick = (e) => {
 //     //an diesem punkt wollen wir die seatid/place_id in state (context) speichern
-
 
 //     state = {
 //       place_id: "",

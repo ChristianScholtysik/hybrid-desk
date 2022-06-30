@@ -27,7 +27,7 @@ const DateTime = () => {
       max="2222-12-31T23:59:59"
       onIonChange={(e) => {
         console.log(`${bookingUrl}&datetime=${e.detail.value}`);
-        setBookingUrl(`${bookingUrl}&datetime=${e.detail.value}`);
+        // setBookingUrl(`${bookingUrl}&datetime=${e.detail.value}`);
       }}
     ></IonDatetime>
   );
