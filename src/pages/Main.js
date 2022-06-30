@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import Header from "../components/Header";
 import { Pagination } from "swiper";
 import DateTime from "../components/DateTime";
-import { Overview } from "../components/Overview";
+import Overview from "../components/Overview";
 import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
 import { Redirect } from "react-router";

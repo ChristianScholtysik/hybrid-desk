@@ -33,9 +33,12 @@ function Seats() {
             // Stellt einen anderen Button dar wenn das date aus dem context einem date aus place.unavailable entspricht als sonst
 
             <div key={place._id}>
-              <IonButton onClick={() => setSelectedSeat(place._id)}>
+              <button
+                className="btn"
+                onClick={() => setSelectedSeat(place._id)}
+              >
                 {place.seat}
-              </IonButton>
+              </button>
             </div>
           ))}
         </>

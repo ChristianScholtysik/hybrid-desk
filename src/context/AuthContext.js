@@ -16,6 +16,8 @@ const AuthState = ({ children }) => {
   );
   const [location, setLocation] = useState(null);
   const [selectedSeat, setSelectedSeat] = useState(null);
+  const [date, setDate] = useState(null);
+  const [room, setRoom] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -48,6 +50,12 @@ const AuthState = ({ children }) => {
         setBookingUrl,
         location,
         setLocation,
+        selectedSeat,
+        setSelectedSeat,
+        date,
+        setDate,
+        room,
+        setRoom,
       }}
     >
       {children}

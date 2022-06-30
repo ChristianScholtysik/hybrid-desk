@@ -4,8 +4,8 @@ import { useContext, useState } from "react";
 import "./main.css";
 
 const DateTime = () => {
-  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
-
+  const { bookingUrl, setBookingUrl, setDate } = useContext(AuthContext);
+  // setDate(e.target.id);
   const isWeekday = (dateString) => {
     const date = new Date(dateString);
     const utcDay = date.getUTCDay();
