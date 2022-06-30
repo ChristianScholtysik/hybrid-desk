@@ -1,10 +1,12 @@
 import axios from "axios";
 import React from "react";
 import { IonContent, IonTitle, IonButton } from "@ionic/react";
-import { useState, useEffect, useContext } from "react";
+import { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 
 import "./main.css";
+
 
 // const Seats = () => {
 //   const { bookingUrl, setBookingUrl } = useContext(AuthContext);
@@ -16,6 +18,7 @@ import "./main.css";
 function Seats() {
   const [place, getPlace] = useState([]);
 
+
   const url = "http://localhost:5000/";
 
   useEffect(() => {
@@ -26,8 +29,10 @@ function Seats() {
     axios
       .get(`${url}place`)
       .then((response) => {
+
         const getAllPlace = response.data.place.getAllPlace;
         getPlace(getAllPlace);
+
       })
       .catch((error) => console.error(`error: ${error}`));
   };
@@ -36,12 +41,23 @@ function Seats() {
       <IonButton seats={place}></IonButton>
     </div>
   );
+
 }
+
 export default Seats;
 
 //   //wenn ein spezieller sitzplatz ausgewählt wurde:
 //   const handleClick = (e) => {
 //     //an diesem punkt wollen wir die seatid/place_id in state (context) speichern
+
+
+//     state = {
+//       place_id: "",
+//     };
+//     this.setState({
+//       place_id: id,
+//     });
+
 //   };
 //   return (
 //     <IonContent>
