@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { IonContent, IonTitle, IonButton } from "@ionic/react";
-import { useState, useEffect, useContext } from "react";
+import { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 
 import "./main.css";
@@ -11,10 +12,10 @@ const Seats = () => {
   //im useEffect:
   // gibt uns alle available seats auf basis der booking Url bzw. der query parameter der booking Url
   // diese Seats sollen dann stück state speichern available Seats
-  //consitional rendering when available seats einen truthy value hat,  dann mappe über available seats und zeig für jeden seat einen button mit der Seatnumber
+  //conditional rendering when available seats einen truthy value hat,  dann mappe über available seats und zeig für jeden seat einen button mit der Seatnumber
   // axios.get(bookingUrl).then.catch;
+  const [seats, getSeats] = useState("");
 
-  const [place, getPlace] = useState("");
   const url = "http://localhost:5000/";
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const Seats = () => {
     axios
       .get(`${url}place`)
       .then((response) => {
+
         const getPlace = response.data.place.getPlace;
         getAvailableSeats(getPlace);
       })
@@ -35,12 +37,22 @@ const Seats = () => {
       <IonButton seats={place}></IonButton>
     </div>
   );
+
 };
 export default Seats;
 
 //   //wenn ein spezieller sitzplatz ausgewählt wurde:
 //   const handleClick = (e) => {
 //     //an diesem punkt wollen wir die seatid/place_id in state (context) speichern
+
+
+//     state = {
+//       place_id: "",
+//     };
+//     this.setState({
+//       place_id: id,
+//     });
+
 //   };
 //   return (
 //     <IonContent>
