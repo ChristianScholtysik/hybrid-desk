@@ -28,21 +28,21 @@ const Location = () => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonButton id="berlin" onClick={handleClick}>
+              <IonButton id="Berlin" onClick={handleClick}>
                 Berlin
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton id="hamburg" onClick={handleClick}>
+              <IonButton id="Hamburg" onClick={handleClick}>
                 Hamburg
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton id="munich" onClick={handleClick}>
+              <IonButton id="Munich" onClick={handleClick}>
                 Munich
               </IonButton>
             </IonCol>
