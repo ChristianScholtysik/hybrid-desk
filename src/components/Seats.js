@@ -1,8 +1,10 @@
+import axios from "axios";
 import React from "react";
 import { IonContent, IonTitle, IonButton } from "@ionic/react";
 import { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
+
 import "./main.css";
 
 const Seats = () => {
@@ -13,6 +15,7 @@ const Seats = () => {
   //conditional rendering when available seats einen truthy value hat,  dann mappe über available seats und zeig für jeden seat einen button mit der Seatnumber
   // axios.get(bookingUrl).then.catch;
   const [seats, getSeats] = useState("");
+
   const url = "http://localhost:5000/";
 
   useEffect(() => {
@@ -23,29 +26,33 @@ const Seats = () => {
     axios
       .get(`${url}place`)
       .then((response) => {
-        const getSeats = response.data.seats.getSeats;
-        getAvailableSeats(getSeats);
+
+        const getPlace = response.data.place.getPlace;
+        getAvailableSeats(getPlace);
       })
       .catch((error) => console.error(`error: ${error}`));
-
-    return (
-      <div>
-        <IonButton seats={seats}></IonButton>
-      </div>
-    );
   };
+  return (
+    <div>
+      <IonButton seats={place}></IonButton>
+    </div>
+  );
+
 };
 export default Seats;
 
 //   //wenn ein spezieller sitzplatz ausgewählt wurde:
 //   const handleClick = (e) => {
 //     //an diesem punkt wollen wir die seatid/place_id in state (context) speichern
+
+
 //     state = {
 //       place_id: "",
 //     };
 //     this.setState({
 //       place_id: id,
 //     });
+
 //   };
 //   return (
 //     <IonContent>

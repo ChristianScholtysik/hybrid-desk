@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
 import "./main.css";
+import { IonInput, IonLabel, IonItem, IonButton } from "@ionic/react";
 
 const LoginPage = () => {
   //bei Form Submit post request an die API schicken
@@ -38,14 +39,30 @@ const LoginPage = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="my-3 row">
+      {/* <div className="my-3 row">
         <label htmlFor="email" className="col-sm-2 col-form-label">
           Email
         </label>
+
         <div className="col-sm-5">
           <input type="text" className="form-control" id="email" name="email" />
         </div>
-      </div>
+      </div> */}
+
+      <IonItem>
+        <IonLabel position="floating" htmlFor="email">
+          Email
+        </IonLabel>
+        <IonInput type="text" id="email" name="email"></IonInput>
+      </IonItem>
+      <IonItem>
+        <IonLabel position="floating" htmlFor="inputPassword">
+          Password
+        </IonLabel>
+        <IonInput type="password" id="inputPassword" name="password"></IonInput>
+      </IonItem>
+      <IonButton type="submit">Login</IonButton>
+      {/* 
       <div className="mb-3 row">
         <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
           Password
@@ -61,7 +78,7 @@ const LoginPage = () => {
       </div>
       <button type="submit" className="btn btn-primary">
         LogIn
-      </button>
+      </button> */}
     </form>
   );
 };

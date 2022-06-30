@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
+import { IonItem, IonLabel, IonInput, IonButton } from "@ionic/react";
 // import { IonButton, IonLabel, IonInput, IonItem } from "@ionic/react";
 
 import "./main.css";
@@ -41,7 +42,53 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="my-3 row">
+      <IonItem>
+        <IonLabel position="floating" htmlFor="first_name">
+          First Name
+        </IonLabel>
+        <IonInput
+          type="text"
+          id="first_name"
+          name="first_name"
+          className="form-control"
+        ></IonInput>
+      </IonItem>
+      <IonItem>
+        <IonLabel position="floating" htmlFor="last_name">
+          Last Name
+        </IonLabel>
+        <IonInput
+          type="text"
+          id="last_name"
+          name="last_name"
+          className="form-control"
+        ></IonInput>
+      </IonItem>
+      <IonItem>
+        <IonLabel position="floating" htmlFor="email">
+          Email
+        </IonLabel>
+        <IonInput
+          type="text"
+          id="email"
+          name="email"
+          className="form-control"
+        ></IonInput>
+      </IonItem>
+      <IonItem>
+        <IonLabel position="floating" htmlFor="inputPassword">
+          Password
+        </IonLabel>
+        <IonInput
+          type="password"
+          id="inputPassword"
+          name="password"
+          className="form-control"
+        ></IonInput>
+      </IonItem>
+      <IonButton type="submit">SignUp</IonButton>
+
+      {/* <div className="my-3 row">
         <label htmlFor="first_name" className="col-sm-2 col-form-label">
           Firstname
         </label>
@@ -92,7 +139,7 @@ const Signup = () => {
       </div>
       <button type="submit" className="btn btn-primary">
         Jetzt registrieren
-      </button>
+      </button> */}
     </form>
     // <>
     //   <div className="container">
