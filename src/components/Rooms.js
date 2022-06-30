@@ -12,11 +12,11 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Rooms = () => {
-  const { bookingUrl, setBookingUrl } = useContext(AuthContext);
+  const { bookingUrl, setBookingUrl, setRoom } = useContext(AuthContext);
 
   const handleClick = (e) => {
     console.log(`${bookingUrl}&room=${e.target.id}`);
-    // setBookingUrl(`${bookingUrl}&room=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+    setRoom(e.target.id); // setBookingUrl(`${bookingUrl}&room=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
 
     //hier muss der get request an die Api geschickt werden (getallavaiableseatbylocation)
     //mit der response könnt ihr dann den flooprlan anzeigen
