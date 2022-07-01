@@ -18,7 +18,8 @@ import { Redirect } from "react-router";
 
 const Main = () => {
   // const [userInfo, setUserInfo] = useState(null);
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, location, room, selectedSeat, date } =
+    useContext(AuthContext);
 
   // const handleClick = async () => {
   //   const token = localStorage.getItem("token");
@@ -50,20 +51,12 @@ const Main = () => {
               <Location />
             </SwiperSlide>
 
-            <SwiperSlide>
-              <DateTime />
-            </SwiperSlide>
+            <SwiperSlide>{location && <DateTime />}</SwiperSlide>
 
-            <SwiperSlide>
-              <Rooms />
-            </SwiperSlide>
+            <SwiperSlide>{date && <Rooms />}</SwiperSlide>
 
-            <SwiperSlide>
-              <Seats />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Overview />
-            </SwiperSlide>
+            <SwiperSlide>{room && <Seats />}</SwiperSlide>
+            <SwiperSlide>{selectedSeat && <Overview />}</SwiperSlide>
           </Swiper>
         </IonPage>
       ) : (

@@ -18,9 +18,11 @@ const AuthState = ({ children }) => {
   const [selectedSeat, setSelectedSeat] = useState(null);
   const [date, setDate] = useState(null);
   const [room, setRoom] = useState(null);
+  const [userInfos, setUserInfos] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    if (!token) return setIsAuthenticated(false);
     const checkIfTokenValid = async () => {
       if (token) {
         try {
@@ -30,6 +32,7 @@ const AuthState = ({ children }) => {
           );
           if (res.status === 200) {
             setIsAuthenticated(true);
+            setUserInfos(res.data);
           }
         } catch (error) {
           console.log(error);
@@ -56,6 +59,8 @@ const AuthState = ({ children }) => {
         setDate,
         room,
         setRoom,
+        userInfos,
+        setUserInfos,
       }}
     >
       {children}

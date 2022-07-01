@@ -44,7 +44,7 @@ function Seats() {
       {places.length > 0 ? (
         <div className="gridcontainer">
           {places.map((place) => (
-            <div class="item1" key={place._id}>
+            <div className="item1" key={place._id}>
               {!place.unavailable ? (
                 //Button freier sitzplat
 

@@ -10,15 +10,29 @@ import {
   IonIcon,
 } from "@ionic/react";
 import { book, person } from "ionicons/icons";
+import axios from "axios";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
 import { AuthContext } from "../context/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export const Header: React.FC = () => {
-  const { isAuthenticated } = useContext(AuthContext)
+  // const { isAuthenticated } = useContext(AuthContext);
+
+  // const user = async () => {
+  //   const token = localStorage.getItem("token");
+  //   console.log(token);
+  //   try {
+  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
+  //       //   headers: { token: token },
+  //     });
+  //     setUserInfo(res.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
@@ -28,7 +42,7 @@ export const Header: React.FC = () => {
             <img src={Logo} alt="Logo" className="logo" />
 
             <h2 className="hallo">
-              Hallo, {isAuthenticated.name}
+              Hallo,
               {/* Hallo {user.first_name}
               {user.last_name} */}
             </h2>

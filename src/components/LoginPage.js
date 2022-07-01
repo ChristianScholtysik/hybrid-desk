@@ -11,7 +11,7 @@ const LoginPage = () => {
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Login auf die /post-login route navigieren
 
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated, setUserInfos } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,9 +26,12 @@ const LoginPage = () => {
         `${process.env.REACT_APP_API_URL}/user/login`,
         loginData
       );
+ 
+
       const token = res.headers.authorization;
       //token im localStorage speichern
       localStorage.setItem("token", token);
+      setUserInfos(res.data)
       setIsAuthenticated(true);
     } catch (error) {
       console.log(error);
