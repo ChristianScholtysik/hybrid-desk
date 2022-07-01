@@ -29,7 +29,14 @@ const Overview = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(userInfos._id, location, date, room, selectedSeat);
+    console.log(
+      userInfos._id,
+      userInfos.first_name,
+      location,
+      date,
+      room,
+      selectedSeat
+    );
   };
 
   // der endpunkt: http://localhost:5000/reservation/62bc0ab5b4436aa68e17f46b/
@@ -51,11 +58,16 @@ const Overview = () => {
                 <IonList>
                   <IonItem>
                     <IonIcon slot="start" color="primary" icon={location} />
-
+                    <IonLabel>
+                      <h2>User</h2>
+                      <p>{userInfos.first_name}</p>
+                    </IonLabel>
+                  </IonItem>
+                  <IonItem>
+                    <IonIcon slot="start" color="primary" icon={location} />
                     <IonLabel>
                       <h2>Location</h2>
-
-                      <p></p>
+                      <p>{location}</p>
                     </IonLabel>
                   </IonItem>
 
@@ -63,9 +75,8 @@ const Overview = () => {
                     <IonIcon slot="start" icon={alarm} color="primary" />
 
                     <IonLabel>
-                      <h2>Date and Time</h2>
-                      <h3>I'm a big deal</h3>
-                      <p>Listen, I've had a pretty messed up day...</p>
+                      <h2>Date </h2>
+                      <p>{date}</p>
                     </IonLabel>
                   </IonItem>
 
@@ -73,8 +84,7 @@ const Overview = () => {
                     <IonIcon slot="start" icon={home} color="primary" />
                     <IonLabel>
                       <h2>Seat/Meetingroom</h2>
-                      <h3>I'm a big deal</h3>
-                      <p>Listen, I've had a pretty messed up day...</p>
+                      <p>{selectedSeat.seat}</p>
                     </IonLabel>
                   </IonItem>
                   <IonButton type="submit">Send</IonButton>
