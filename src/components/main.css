@@ -45,7 +45,9 @@
 .btn:focus {
   background: #d41ba3;
 }
-.btnUnavailable{background: grey}
+.btnUnavailable {
+  background: grey;
+}
 
 .grid-design {
   display: flex;
