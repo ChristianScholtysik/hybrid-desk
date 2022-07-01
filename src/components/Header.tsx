@@ -14,8 +14,12 @@ import { book, person } from "ionicons/icons";
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
 export const Header: React.FC = () => {
+  const { isAuthenticated } = useContext(AuthContext)
+
   return (
     <>
       <IonToolbar color="primary">
@@ -24,8 +28,7 @@ export const Header: React.FC = () => {
             <img src={Logo} alt="Logo" className="logo" />
 
             <h2 className="hallo">
-              Hallo, ich funktioniere nicht weil Ivana das Backend nicht fertig
-              gemacht hat
+              Hallo, {isAuthenticated.name}
               {/* Hallo {user.first_name}
               {user.last_name} */}
             </h2>
