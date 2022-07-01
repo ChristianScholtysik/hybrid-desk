@@ -11,7 +11,8 @@ const LoginPage = () => {
   //token, den wir zurückbekommen in localStorage speichern
   //bei erfolgreichem Login auf die /post-login route navigieren
 
-  const { isAuthenticated, setIsAuthenticated, setUserInfos } = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated, setUserInfos } =
+    useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +27,11 @@ const LoginPage = () => {
         `${process.env.REACT_APP_API_URL}/user/login`,
         loginData
       );
- 
 
       const token = res.headers.authorization;
       //token im localStorage speichern
       localStorage.setItem("token", token);
-      setUserInfos(res.data)
+      setUserInfos(res.data);
       setIsAuthenticated(true);
     } catch (error) {
       console.log(error);
@@ -42,16 +42,6 @@ const LoginPage = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <div className="my-3 row">
-        <label htmlFor="email" className="col-sm-2 col-form-label">
-          Email
-        </label>
-
-        <div className="col-sm-5">
-          <input type="text" className="form-control" id="email" name="email" />
-        </div>
-      </div> */}
-
       <IonItem>
         <IonLabel position="floating" htmlFor="email">
           Email
@@ -65,23 +55,6 @@ const LoginPage = () => {
         <IonInput type="password" id="inputPassword" name="password"></IonInput>
       </IonItem>
       <IonButton type="submit">Login</IonButton>
-      {/* 
-      <div className="mb-3 row">
-        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-          Password
-        </label>
-        <div className="col-sm-5">
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword"
-            name="password"
-          />
-        </div>
-      </div>
-      <button type="submit" className="btn btn-primary">
-        LogIn
-      </button> */}
     </form>
   );
 };
