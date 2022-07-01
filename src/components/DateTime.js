@@ -1,11 +1,15 @@
-import { IonDatetime, IonItem, IonLabel } from "@ionic/react";
+import { IonDatetime } from "@ionic/react";
 import { AuthContext } from "../context/AuthContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./main.css";
+
 // import { format, compareAsc } from "date-fns";
 
 const DateTime = () => {
   const { bookingUrl, setBookingUrl, setDate } = useContext(AuthContext);
+
+
+
 
   const isWeekday = (dateString) => {
     const date = new Date(dateString);
@@ -19,7 +23,7 @@ const DateTime = () => {
   return (
     <IonDatetime
       color="primary"
-      displayFormat="YYYY-MM-DD"
+      // displayFormat="YYYY-MM-DD"
       presentation="date"
       // minuteValues="0,15,30,45"
       isDateEnabled={isWeekday}

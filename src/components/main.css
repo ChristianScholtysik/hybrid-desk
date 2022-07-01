@@ -76,6 +76,7 @@
   background: #d41ba3;
 }
 .btnUnavailable {
+
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -88,6 +89,7 @@
   font-weight: bold;
   color: white;
   text-align: center;
+
 }
 
 .grid-design {

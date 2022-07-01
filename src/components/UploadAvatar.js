@@ -41,9 +41,9 @@ function UploadAvatar() {
           />
           <br />
           <br />
-          {/* <IonButton variant="primary" type="submit">
+          <IonButton variant="primary" type="submit">
             Upload Profile Image
-          </IonButton> */}
+          </IonButton>
         </form>
       </div>
     </div>
