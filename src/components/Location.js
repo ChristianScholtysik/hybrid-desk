@@ -9,11 +9,14 @@ import {
 import "./main.css";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { navigate } from "ionicons/icons";
 
 const Location = () => {
   const { bookingUrl, setBookingUrl, setLocation } = useContext(AuthContext);
 
   const handleClick = (e) => {
+    // navigate("/");
+
     console.log(`${bookingUrl}?location=${e.target.id}`);
     setBookingUrl(`${bookingUrl}?location=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
     setLocation(e.target.id);
