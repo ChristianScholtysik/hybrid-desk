@@ -1,6 +1,6 @@
 import axios from "axios";
-import React from "react";
-import { IonContent, IonTitle, IonButton } from "@ionic/react";
+import { IonContent, IonGrid, IonTitle, IonCol } from "@ionic/react";
+
 import { useContext, useState, useEffect } from "react";
 
 import { AuthContext } from "../context/AuthContext";
@@ -42,14 +42,14 @@ function Seats() {
   return (
     <>
       {places.length > 0 ? (
-        <div className="gridcontainer">
+        <div className="grid-container">
           {places.map((place) => (
-            <div className="item1" key={place._id}>
+            <div key={place._id}>
               {!place.unavailable ? (
                 //Button freier sitzplat
 
                 <button
-                  className="btn"
+                  className="deskicon"
                   onClick={() => setSelectedSeat(place._id)}
                 >
                   {place.seat}
@@ -57,7 +57,7 @@ function Seats() {
               ) : (
                 //Button belegter sietzplatz
 
-                <button className="btnUnavailable">{place.seat}</button>
+                <button className="deskiconnodesk">{place.seat}</button>
               )}
             </div>
           ))}
@@ -71,40 +71,40 @@ function Seats() {
 
 export default Seats;
 
-{
-  /* <>
-      {places.length > 0 ? (
-        <>
-          {places.map((place) => (
-            <div key={place._id}>
-              {!place.unavailable ? (
-                //Button freier sitzplat
-                <button
-                  className="btn"
-                  onClick={() => setSelectedSeat(place._id)}
-                >
-                  {place.seat}
-                </button>
-              ) : (
-                //Button belegter sietzplatz
-                <button className="btnUnavailable">{place.seat} </button>
-              )}
-            </div>
-          ))}
-        </>
-      ) : (
-        "No available seats in your selected location"
-      )}
-    </> */
-}
+// {
+//   /* <>
+//       {places.length > 0 ? (
+//         <>
+//           {places.map((place) => (
+//             <div key={place._id}>
+//               {!place.unavailable ? (
+//                 //Button freier sitzplat
+//                 <button
+//                   className="btn"
+//                   onClick={() => setSelectedSeat(place._id)}
+//                 >
+//                   {place.seat}
+//                 </button>
+//               ) : (
+//                 //Button belegter sietzplatz
+//                 <button className="btnUnavailable">{place.seat} </button>
+//               )}
+//             </div>
+//           ))}
+//         </>
+//       ) : (
+//         "No available seats in your selected location"
+//       )}
+//     </> */
+// }
 
-{
-  /* <div key={place._id}>
-                  <button
-                    className="btn"
-                    onClick={() => setSelectedSeat(place._id)}
-                  >
-                    {place.seat} frei
-                  </button>
-                </div> */
-}
+// {
+//   /* <div key={place._id}>
+//                   <button
+//                     className="btn"
+//                     onClick={() => setSelectedSeat(place._id)}
+//                   >
+//                     {place.seat} frei
+//                   </button>
+//                 </div> */
+// }
