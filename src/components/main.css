@@ -1,5 +1,4 @@
 .btn {
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -7,11 +6,42 @@
   height: 40px;
   margin: 0.15rem;
   background-color: #4dbfd6;
-  /* padding: 20px; */
+
   font-size: 0.75em;
   font-weight: bold;
   color: white;
   text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid: 10px / auto auto auto;
+  grid-gap: 5px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.deskicon {
+  background: url(../components/img/freedesk.svg);
+  background-repeat: no-repeat;
+}
+
+/* .deskicon:active {
+  background: url(../components/img/onclickdesk.svg);
+} */
+
+.deskicon:focus {
+  background: url(../components/img/onclickdesk.svg);
+}
+
+.deskiconnodesk {
+  background: url(../components/img/nodesk.svg);
 }
 
 .box {
@@ -46,7 +76,20 @@
   background: #d41ba3;
 }
 .btnUnavailable {
-  background: grey;
+
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0.15rem;
+  background-color: #8c8c8c;
+  /* padding: 20px; */
+  font-size: 0.75em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+
 }
 
 .grid-design {

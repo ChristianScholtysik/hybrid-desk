@@ -3,12 +3,17 @@ import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import "./main.css";
 
+// import { format, compareAsc } from "date-fns";
+
 const DateTime = () => {
   const { bookingUrl, setBookingUrl, setDate } = useContext(AuthContext);
+
+
+
+
   const isWeekday = (dateString) => {
     const date = new Date(dateString);
     const utcDay = date.getUTCDay();
-
     /**
      * Date will be enabled if it is not
      * Sunday or Saturday
@@ -26,9 +31,8 @@ const DateTime = () => {
       min="2022-01-01"
       max="2222-12-31"
       onIonChange={(e) => {
-        console.log(`${bookingUrl}&date=${e.detail.value}`);
-        setDate(e.target.id);
-        setBookingUrl(`${bookingUrl}&date=${e.detail.value}`);
+        // console.log(e.detail.value.split("T")[0]);
+        setDate(e.detail.value.split("T")[0]);
       }}
     ></IonDatetime>
   );

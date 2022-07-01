@@ -9,8 +9,7 @@ import "./main.css";
 
 function Seats() {
   const [places, setPlaces] = useState([]);
-
-  const { bookingUrl, setSelectedSeat, setDate } = useContext(AuthContext);
+  const { bookingUrl, setSelectedSeat, date } = useContext(AuthContext);
 
   useEffect(() => {
     const getAvailableSeats = () => {
@@ -18,35 +17,51 @@ function Seats() {
         .get(bookingUrl)
         .then((response) => {
           console.log(response.data);
+          console.log(date);
+          for (let i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].unavailable);
+            const unavailable = response.data[i].unavailable.find(
+              (day) => day == date
+            );
+            if (unavailable) {
+              response.data[i].unavailable = true;
+              console.log(response.data.unavailable);
+            } else {
+              response.data[i].unavailable = false;
+              console.log(response.data.unavailable);
+            }
+          }
           setPlaces(response.data);
+          console.log(response.data);
         })
         .catch((error) => console.error(`error: ${error}`));
     };
     getAvailableSeats();
-  }, [bookingUrl]);
+  }, [date, bookingUrl]);
+
   return (
     <>
       {places.length > 0 ? (
-        <>
-          {places.map((place) =>
-            // Stellt einen anderen Button dar wenn das date aus dem context einem date aus place.unavailable entspricht als sonst
+        <div className="gridcontainer">
+          {places.map((place) => (
+            <div class="item1" key={place._id}>
+              {!place.unavailable ? (
+                //Button freier sitzplat
 
-            setDate === place.unavailable.item ? (
-              <div key={place._id}>
-                <button className="btnUnavailable">{place.seat}</button>
-              </div>
-            ) : (
-              <div key={place._id}>
                 <button
                   className="btn"
                   onClick={() => setSelectedSeat(place._id)}
                 >
                   {place.seat}
                 </button>
-              </div>
-            )
-          )}
-        </>
+              ) : (
+                //Button belegter sietzplatz
+
+                <button className="btnUnavailable">{place.seat}</button>
+              )}
+            </div>
+          ))}
+        </div>
       ) : (
         "No available seats in your selected location"
       )}
@@ -55,3 +70,41 @@ function Seats() {
 }
 
 export default Seats;
+
+{
+  /* <>
+      {places.length > 0 ? (
+        <>
+          {places.map((place) => (
+            <div key={place._id}>
+              {!place.unavailable ? (
+                //Button freier sitzplat
+                <button
+                  className="btn"
+                  onClick={() => setSelectedSeat(place._id)}
+                >
+                  {place.seat}
+                </button>
+              ) : (
+                //Button belegter sietzplatz
+                <button className="btnUnavailable">{place.seat} </button>
+              )}
+            </div>
+          ))}
+        </>
+      ) : (
+        "No available seats in your selected location"
+      )}
+    </> */
+}
+
+{
+  /* <div key={place._id}>
+                  <button
+                    className="btn"
+                    onClick={() => setSelectedSeat(place._id)}
+                  >
+                    {place.seat} frei
+                  </button>
+                </div> */
+}
