@@ -8,13 +8,16 @@ import {
   IonFabList,
   IonAvatar,
   IonIcon,
+  IonRouterOutlet,
 } from "@ionic/react";
+import { Route } from "react-router-dom";
 import { book, person } from "ionicons/icons";
 import axios from "axios";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
+import PostLogin from "./PostLogin";
 import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 
@@ -72,7 +75,12 @@ export const Header: React.FC = () => {
             </IonAvatar>
           </IonFabButton>
           <IonFabList side="bottom">
-            <IonFabButton>
+            <IonRouterOutlet>
+              <Route exact path="/PostLogin">
+                <PostLogin />
+              </Route>
+            </IonRouterOutlet>
+            <IonFabButton href="/PostLogin">
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
             <div className="profile_button"></div>
