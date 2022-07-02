@@ -8,31 +8,34 @@ import {
   IonFabList,
   IonAvatar,
   IonIcon,
+  IonRouterOutlet,
 } from "@ionic/react";
+import { Route } from "react-router-dom";
 import { book, person } from "ionicons/icons";
 import axios from "axios";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
+import PostLogin from "../pages/PostLogin";
 import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 
 export const Header: React.FC = () => {
-  // const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, userInfos, setUserInfo } = useContext(AuthContext);
 
-  // const user = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
-  //       //   headers: { token: token },
-  //     });
-  //     setUserInfo(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const user = async () => {
+    const token = localStorage.getItem("token");
+    console.log(token);
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
+        // headers: { token: token },
+      });
+      setUserInfo(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -41,11 +44,7 @@ export const Header: React.FC = () => {
           <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
 
-            <h2 className="hallo">
-              Hallo,
-              {/* Hallo {user.first_name}
-              {user.last_name} */}
-            </h2>
+            <h2 className="hallo">Hallo, {userInfos.first_name}</h2>
           </IonTitle>
         </IonHeader>
       </IonToolbar>
@@ -76,7 +75,12 @@ export const Header: React.FC = () => {
             </IonAvatar>
           </IonFabButton>
           <IonFabList side="bottom">
-            <IonFabButton>
+            <IonRouterOutlet>
+              <Route exact path="/PostLogin">
+                <PostLogin />
+              </Route>
+            </IonRouterOutlet>
+            <IonFabButton href="/PostLogin">
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
             <div className="profile_button"></div>
