@@ -34,7 +34,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import PostLogin from "./components/PostLogin";
+import PostLogin from "./pages/PostLogin";
 
 setupIonicReact();
 

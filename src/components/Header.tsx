@@ -17,7 +17,7 @@ import axios from "axios";
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
-import PostLogin from "./PostLogin";
+import PostLogin from "../pages/PostLogin";
 import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 
