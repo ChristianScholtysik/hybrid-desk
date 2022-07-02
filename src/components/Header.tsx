@@ -19,20 +19,20 @@ import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 
 export const Header: React.FC = () => {
-  // const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, userInfos, setUserInfo } = useContext(AuthContext);
 
-  // const user = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
-  //       //   headers: { token: token },
-  //     });
-  //     setUserInfo(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const user = async () => {
+    const token = localStorage.getItem("token");
+    console.log(token);
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
+        // headers: { token: token },
+      });
+      setUserInfo(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -41,11 +41,7 @@ export const Header: React.FC = () => {
           <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
 
-            <h2 className="hallo">
-              Hallo,
-              {/* Hallo {user.first_name}
-              {user.last_name} */}
-            </h2>
+            <h2 className="hallo">Hallo, {userInfos.first_name}</h2>
           </IonTitle>
         </IonHeader>
       </IonToolbar>

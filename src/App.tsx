@@ -15,7 +15,6 @@ import { IonReactRouter } from "@ionic/react-router";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Main from "./pages/Main";
-import DarkMode from "../src/components/DarkMode";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -74,7 +73,6 @@ const App: React.FC = () => (
             <IonIcon icon={person} />
             <IonLabel>Main</IonLabel>
           </IonTabButton>
-          <DarkMode />
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
