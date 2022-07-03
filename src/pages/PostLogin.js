@@ -1,9 +1,8 @@
-import axios from "axios";
-import { IonPage } from "@ionic/react";
+import { IonPage, IonContent } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
-import Header from "../components/Header";
+import { Header } from "../components/Header";
 
 // import "../components/main.css";
 const PostLogin = () => {
@@ -11,7 +10,7 @@ const PostLogin = () => {
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
 
   // const [userInfo, setUserInfo] = useState(null);
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, userInfos } = useContext(AuthContext);
 
   // const handleClick = async () => {
   //   const token = localStorage.getItem("token");
@@ -20,7 +19,7 @@ const PostLogin = () => {
   //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/info/me`, {
   //       headers: { token: token },
   //     });
-  //     setUserInfo(res.data);
+  //     setUserInfos(res.data);
   //   } catch (error) {
   //     console.log(error);
   //   }
@@ -29,19 +28,25 @@ const PostLogin = () => {
   return (
     <>
       {isAuthenticated ? (
-        <IonPage>
-          <Header />
+        <>
+          <IonPage>
+            <IonContent>
+              <Header />
+              {userInfos.first_name}
+              {userInfos.last_name}
+              {userInfos.email}
+              <h1>Du bist eingeloggt und kannst buchen</h1>
 
-          <h1>Du bist eingeloggt und kannst buchen</h1>
-          <button>hier lang</button>
-          {/* <button onClick={handleClick}>Userinfos anzeigen</button>
+              {/* <button onClick={handleClick}>Userinfos anzeigen</button>
               {userInfo && (
                 <>
                   <p>Deine Id in der DB ist {userInfo._id}</p>
                   <p>Deine Mailadresse ist {userInfo.email}</p>
                 </>
               )} */}
-        </IonPage>
+            </IonContent>
+          </IonPage>
+        </>
       ) : (
         <Redirect to="/" />
       )}
