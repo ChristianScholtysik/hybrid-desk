@@ -69,8 +69,9 @@ export const Header: React.FC = () => {
           <IonFabButton color="secondary">
             <IonAvatar class="Avatar">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
-                alt="bild"
+                src="https://m.media-amazon.com/images/M/MV5BOTAyMTI4ODQ3Ml5BMl5BanBnXkFtZTcwOTk0MjE1OQ@@._V1_.jpg"
+                //src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
+                alt="2bild"
               />
             </IonAvatar>
           </IonFabButton>
