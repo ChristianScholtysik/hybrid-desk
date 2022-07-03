@@ -12,30 +12,31 @@ import {
 } from "@ionic/react";
 import { Route } from "react-router-dom";
 import { book, person } from "ionicons/icons";
-import axios from "axios";
+
+import michael from "./img/michael.jpg";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
 import PostLogin from "../pages/PostLogin";
 import { AuthContext } from "../context/AuthContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export const Header: React.FC = () => {
-  const { isAuthenticated, userInfos, setUserInfo } = useContext(AuthContext);
+  const { userInfos } = useContext(AuthContext);
 
-  const user = async () => {
-    const token = localStorage.getItem("token");
-    console.log(token);
-    try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
-        // headers: { token: token },
-      });
-      setUserInfo(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const user = async () => {
+  //   const token = localStorage.getItem("token");
+  //   console.log(token);
+  //   try {
+  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
+  //       // headers: { token: token },
+  //     });
+  //     setUserInfo(res.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
@@ -44,7 +45,7 @@ export const Header: React.FC = () => {
           <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
 
-            <h2 className="hallo">Hallo, {userInfos.first_name}</h2>
+            <h2 className="hallo">Hallo {userInfos.first_name} </h2>
           </IonTitle>
         </IonHeader>
       </IonToolbar>
@@ -69,7 +70,7 @@ export const Header: React.FC = () => {
           <IonFabButton color="secondary">
             <IonAvatar class="Avatar">
               <img
-                src="https://m.media-amazon.com/images/M/MV5BOTAyMTI4ODQ3Ml5BMl5BanBnXkFtZTcwOTk0MjE1OQ@@._V1_.jpg"
+                src={michael}
                 //src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
                 alt="2bild"
               />
@@ -77,11 +78,11 @@ export const Header: React.FC = () => {
           </IonFabButton>
           <IonFabList side="bottom">
             <IonRouterOutlet>
-              <Route exact path="/PostLogin">
+              <Route exact path="/post-login">
                 <PostLogin />
               </Route>
             </IonRouterOutlet>
-            <IonFabButton href="/PostLogin">
+            <IonFabButton href="/post-login">
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
             <div className="profile_button"></div>

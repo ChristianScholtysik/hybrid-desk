@@ -9,7 +9,6 @@ import {
 import "./main.css";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { navigate } from "ionicons/icons";
 
 const Location = () => {
   const { bookingUrl, setBookingUrl, setLocation } = useContext(AuthContext);

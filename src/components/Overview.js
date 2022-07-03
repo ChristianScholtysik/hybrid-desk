@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   IonList,
   IonItem,
@@ -11,11 +10,10 @@ import {
   IonRow,
   IonButton,
 } from "@ionic/react";
-import { location, alarm, home } from "ionicons/icons";
+import { locate, alarm, home } from "ionicons/icons";
 import "./main.css";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import axios from "axios";
 
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
@@ -57,14 +55,14 @@ const Overview = () => {
               <IonRow>
                 <IonList>
                   <IonItem>
-                    <IonIcon slot="start" color="primary" icon={location} />
+                    <IonIcon slot="start" color="primary" icon={locate} />
                     <IonLabel>
                       <h2>User</h2>
                       <p>{userInfos.first_name}</p>
                     </IonLabel>
                   </IonItem>
                   <IonItem>
-                    <IonIcon slot="start" color="primary" icon={location} />
+                    <IonIcon slot="start" color="primary" icon={locate} />
                     <IonLabel>
                       <h2>Location</h2>
                       <p>{location}</p>

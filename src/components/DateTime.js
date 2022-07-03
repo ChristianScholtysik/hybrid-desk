@@ -6,10 +6,7 @@ import "./main.css";
 // import { format, compareAsc } from "date-fns";
 
 const DateTime = () => {
-  const { bookingUrl, setBookingUrl, setDate } = useContext(AuthContext);
-
-
-
+  const { setDate } = useContext(AuthContext);
 
   const isWeekday = (dateString) => {
     const date = new Date(dateString);
