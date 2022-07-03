@@ -1,5 +1,5 @@
 import { Redirect, Route } from "react-router-dom";
-import { key, person, lockOpen } from "ionicons/icons";
+import { key, person, lockOpen, rocket } from "ionicons/icons";
 import {
   IonApp,
   IonIcon,
@@ -70,8 +70,12 @@ const App: React.FC = () => (
             <IonLabel>Sign up</IonLabel>
           </IonTabButton>
           <IonTabButton tab="main" href="/main">
+            <IonIcon icon={rocket} />
+            <IonLabel>Booking</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="profile" href="/post-login">
             <IonIcon icon={person} />
-            <IonLabel>Main</IonLabel>
+            <IonLabel>Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

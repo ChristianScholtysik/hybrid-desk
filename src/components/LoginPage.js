@@ -38,7 +38,7 @@ const LoginPage = () => {
     }
   };
 
-  if (isAuthenticated) return <Redirect to="../post-login" />;
+  if (isAuthenticated) return <Redirect to="../main" />;
 
   return (
     <form onSubmit={handleSubmit}>

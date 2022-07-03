@@ -10,7 +10,7 @@ import {
   IonRow,
   IonButton,
 } from "@ionic/react";
-import { locate, alarm, home } from "ionicons/icons";
+import { alarm, home, navigate, person } from "ionicons/icons";
 import "./main.css";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
@@ -45,7 +45,7 @@ const Overview = () => {
   // }
   //   };
   return (
-    <IonContent>
+    <IonContent className="container">
       <form onSubmit={handleSubmit}>
         <div className="container">
           <IonTitle className="headline">Your Booking Overview</IonTitle>
@@ -55,14 +55,14 @@ const Overview = () => {
               <IonRow>
                 <IonList>
                   <IonItem>
-                    <IonIcon slot="start" color="primary" icon={locate} />
+                    <IonIcon slot="start" color="primary" icon={person} />
                     <IonLabel>
                       <h2>User</h2>
                       <p>{userInfos.first_name}</p>
                     </IonLabel>
                   </IonItem>
                   <IonItem>
-                    <IonIcon slot="start" color="primary" icon={locate} />
+                    <IonIcon slot="start" color="primary" icon={navigate} />
                     <IonLabel>
                       <h2>Location</h2>
                       <p>{location}</p>
