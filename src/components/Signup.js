@@ -26,7 +26,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/user/signup`,
+        `${process.env.REACT_APP_API_URL}user/signup`,
         loginData
       );
       const token = res.headers.authorization;
