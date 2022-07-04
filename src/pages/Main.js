@@ -14,6 +14,7 @@ import DateTime from "../components/DateTime";
 import Overview from "../components/Overview";
 import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
+import History from "../components/History";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =

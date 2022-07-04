@@ -2,7 +2,6 @@ import {
   IonList,
   IonItem,
   IonLabel,
- 
   IonTitle,
   IonIcon,
   IonGrid,
@@ -44,7 +43,7 @@ const Overview = () => {
     };
     axios
       .post(
-        `https://hybrid-desk.herokuapp.com/reservation/${userInfos._id}`,
+        `http://localhost:5000/reservation/${userInfos._id}`,
         createReservation
       )
       .then((response) => console.log(response.data))
@@ -61,7 +60,7 @@ const Overview = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="container">
-        <IonTitle className="headline">Your Booking Overview</IonTitle>
+        <IonTitle className="headline">Your Overview</IonTitle>
 
         <IonGrid>
           <IonCol>
@@ -95,7 +94,7 @@ const Overview = () => {
                   <IonIcon slot="start" icon={home} color="primary" />
                   <IonLabel>
                     <h2>Seat/Meetingroom</h2>
-                    <p>{selectedSeat.seat}</p>
+                    <p>{selectedSeat.seat_id}</p>
                   </IonLabel>
                 </IonItem>
                 <IonButton type="submit">Send</IonButton>

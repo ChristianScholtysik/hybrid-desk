@@ -24,7 +24,7 @@ const Location = () => {
   return (
     <IonContent className="container">
       <div className="container">
-        <IonTitle className="headline">Choose your Location</IonTitle>
+        <IonTitle className="headline">WHERE?</IonTitle>
         <div className="container"></div>
 
         <IonGrid>
