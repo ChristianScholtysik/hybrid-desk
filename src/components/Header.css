@@ -18,6 +18,12 @@ ion-fab-button {
   /* border: 5px solid white; */
 }
 
+.Avatar2 {
+  width: 200px;
+  height: 200px;
+  /* border: 5px solid white; */
+}
+
 .logo {
   display: flex;
   justify-content: center;
