@@ -1,4 +1,11 @@
-import { IonPage, IonContent } from "@ionic/react";
+import {
+  IonPage,
+  IonContent,
+  IonLabel,
+  IonItem,
+  IonInput,
+  IonButton,
+} from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
@@ -32,21 +39,22 @@ const PostLogin = () => {
         <IonPage>
           <Header />
           <IonContent>
-            {userInfos.first_name}
+            <p className="container">{userInfos.first_name}</p>
             <br />
-            {userInfos.last_name}
+            <p className="container">{userInfos.last_name}</p>
             <br />
-            {userInfos.email}
+            <p className="container">{userInfos.email}</p>
             <br />
+            <IonLabel position="start">
+              <p>Upload Profile Picture</p>
+            </IonLabel>
+            <IonItem>
+              <IonInput type="file" />
+            </IonItem>
+            <IonButton className="ion-margin-top" type="submit">
+              Upload Profile Image
+            </IonButton>
             <h1>Du bist eingeloggt und kannst buchen</h1>
-
-            {/* <button onClick={handleClick}>Userinfos anzeigen</button>
-              {userInfo && (
-                <>
-                  <p>Deine Id in der DB ist {userInfo._id}</p>
-                  <p>Deine Mailadresse ist {userInfo.email}</p>
-                </>
-              )} */}
           </IonContent>
         </IonPage>
       ) : (
