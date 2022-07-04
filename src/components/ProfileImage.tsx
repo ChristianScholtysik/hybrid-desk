@@ -1,4 +1,4 @@
-import { IonImg, IonContent, IonAvatar } from "@ionic/react";
+import { IonContent, IonAvatar } from "@ionic/react";
 import "./Header.css";
 
 const ProfileImage = () => (

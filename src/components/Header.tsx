@@ -8,15 +8,14 @@ import {
   IonFabList,
   IonAvatar,
   IonIcon,
-  IonRouterOutlet,
 } from "@ionic/react";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 import { book, person } from "ionicons/icons";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
-import PostLogin from "../pages/PostLogin";
+// import PostLogin from "../pages/PostLogin";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 

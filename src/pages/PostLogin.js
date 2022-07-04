@@ -1,14 +1,13 @@
 import {
   IonPage,
   IonContent,
-  IonLabel,
   IonItem,
   IonInput,
   IonButton,
 } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Redirect } from "react-router-dom";
+
 import Header from "../components/Header";
 import ProfileImage from "../components/ProfileImage";
 // import axios from "axios";

@@ -2,7 +2,7 @@ import {
   IonList,
   IonItem,
   IonLabel,
-  IonContent,
+ 
   IonTitle,
   IonIcon,
   IonGrid,
@@ -15,7 +15,7 @@ import "./main.css";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
-import { format, compareAsc } from "date-fns";
+
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
 // aus diesen infomationen setzt ihr eine post request zusammen (infos im body,

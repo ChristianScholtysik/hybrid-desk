@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IonContent, IonGrid, IonTitle, IonCol } from "@ionic/react";
 
 import { useContext, useState, useEffect } from "react";
 
@@ -21,7 +20,7 @@ function Seats() {
           for (let i = 0; i < response.data.length; i++) {
             console.log(response.data[i].unavailable);
             const unavailable = response.data[i].unavailable.find(
-              (day) => day == date
+              (day) => day === date
             );
             if (unavailable) {
               response.data[i].unavailable = true;
