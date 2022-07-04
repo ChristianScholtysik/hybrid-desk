@@ -50,6 +50,7 @@ const Location = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
+        <div className="arrow bounce"></div>
       </div>
     </IonContent>
   );

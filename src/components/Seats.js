@@ -65,6 +65,7 @@ function Seats() {
       ) : (
         "No available seats in your selected location"
       )}
+      <div className="arrow bounce"></div>
     </>
   );
 }
