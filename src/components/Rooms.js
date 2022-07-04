@@ -1,18 +1,11 @@
-import {
-  IonButton,
-  IonContent,
-  IonGrid,
-  IonCol,
-  IonRow,
-  IonTitle,
-} from "@ionic/react";
+import { IonButton, IonGrid, IonCol, IonRow, IonTitle } from "@ionic/react";
 import "./main.css";
 
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Rooms = () => {
-  const { bookingUrl, setBookingUrl, setRoom } = useContext(AuthContext);
+  const { bookingUrl, setRoom } = useContext(AuthContext);
 
   const handleClick = (e) => {
     console.log(`${bookingUrl}&room=${e.target.id}`);

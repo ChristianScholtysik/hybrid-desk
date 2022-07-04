@@ -1,5 +1,5 @@
 import { Redirect, Route } from "react-router-dom";
-import { key, person, lockOpen, rocket } from "ionicons/icons";
+import { key, lockOpen, rocket } from "ionicons/icons";
 import {
   IonApp,
   IonIcon,

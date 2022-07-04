@@ -1,4 +1,4 @@
-import { IonDatetime, IonContent } from "@ionic/react";
+import { IonDatetime } from "@ionic/react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import "./main.css";
