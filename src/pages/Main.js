@@ -14,7 +14,6 @@ import DateTime from "../components/DateTime";
 import Overview from "../components/Overview";
 import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
-import { Redirect } from "react-router";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
