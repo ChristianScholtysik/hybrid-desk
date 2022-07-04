@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+.label {
+  align-items: center;
+}
+
 /* seat container */
 .grid-container {
   display: grid;
@@ -127,7 +131,8 @@
 
 .container {
   text-align: center;
-  position: fixed;
+  display: inline-grid;
+  /* position: fixed; */
   position: absolute;
   left: 0;
   right: 0;
@@ -140,15 +145,23 @@
   line-height: 26px;
 }
 .headline {
-  font-weight: 800;
-  font-size: large;
-  color: #5d5d5d !important;
+  font-weight: 900;
+  font-size: 5em;
+  color: #000000;
   text-transform: uppercase !important;
 }
 
 .button {
   color: white;
   width: 200px;
+}
+
+.button:focus {
+  background-color: #d41ba3 !important;
+}
+
+.button:active {
+  background-color: #d41ba3 !important;
 }
 
 /* .button:active,

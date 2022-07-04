@@ -27,7 +27,7 @@ ion-fab-button {
 .logo {
   display: flex;
   justify-content: center;
-  width: 60% !important;
+  width: 50% !important;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }

@@ -16,7 +16,7 @@ const Rooms = () => {
   };
   return (
     <div className="container">
-      <IonTitle className="headline">What do you need?</IonTitle>
+      <IonTitle className="headline">What?</IonTitle>
       <div className="container"></div>
       <IonGrid>
         <IonRow>
