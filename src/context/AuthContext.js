@@ -21,9 +21,9 @@ const AuthState = ({ children }) => {
   const [userInfos, setUserInfos] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) return setIsAuthenticated(false);
     const checkIfTokenValid = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) return setIsAuthenticated(false);
       if (token) {
         try {
           const res = await axios.get(
@@ -44,6 +44,32 @@ const AuthState = ({ children }) => {
     checkIfTokenValid();
   }, []);
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { email, password } = e.target;
+      const loginData = {
+        email: email.value,
+        password: password.value,
+      };
+
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/user/login`,
+        loginData
+      );
+
+      const token = res.headers.authorization;
+      //token im localStorage speichern
+      localStorage.setItem("token", token);
+      setUserInfos(res.data);
+      console.log("jetzt user infos");
+      setIsAuthenticated(true);
+      console.log("jetzt authenticated");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -61,6 +87,7 @@ const AuthState = ({ children }) => {
         setRoom,
         userInfos,
         setUserInfos,
+        handleLogin,
       }}
     >
       {children}

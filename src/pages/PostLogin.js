@@ -18,19 +18,7 @@ const PostLogin = () => {
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
 
   const { isAuthenticated, userInfos } = useContext(AuthContext);
-
-  // const handleClick = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/info/me`, {
-  //       headers: { token: token },
-  //     });
-  //     setUserInfos(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  console.log(userInfos);
 
   return (
     <IonPage>
