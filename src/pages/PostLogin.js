@@ -17,7 +17,6 @@ const PostLogin = () => {
   //Wenn User authentifiziert, wird Header Component angezeigt
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
 
-  //const [userInfo, setUserInfo] = useState(null);
   const { isAuthenticated, userInfos } = useContext(AuthContext);
 
   // const handleClick = async () => {
@@ -34,9 +33,9 @@ const PostLogin = () => {
   // };
 
   return (
-    <>
-      {isAuthenticated ? (
-        <IonPage>
+    <IonPage>
+      {isAuthenticated && userInfos ? (
+        <>
           <Header />
           <IonContent>
             <p className="container">{userInfos.first_name}</p>
@@ -56,11 +55,12 @@ const PostLogin = () => {
             </IonButton>
             <h1>Du bist eingeloggt und kannst buchen</h1>
           </IonContent>
-        </IonPage>
+        </>
       ) : (
-        <Redirect to="/" />
+        // <Redirect to="/login" />
+        <h1>You are not logged in</h1>
       )}
-    </>
+    </IonPage>
   );
 };
 
