@@ -63,7 +63,7 @@ const Overview = () => {
       <div className="container">
         <IonTitle className="headline">Your Booking Overview</IonTitle>
 
-        <IonGrid className="container">
+        <IonGrid>
           <IonCol>
             <IonRow>
               <IonList>
