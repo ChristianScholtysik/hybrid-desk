@@ -15,6 +15,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Main from "./pages/Main";
+import PostLogin from "./pages/PostLogin";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -34,7 +35,6 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import PostLogin from "./pages/PostLogin";
 
 setupIonicReact();
 
@@ -43,17 +43,17 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/registration">
+          <Route path="/registration">
             <Registration />
           </Route>
 
-          <Route exact path="/main">
+          <Route path="/main">
             <Main />
           </Route>
-          <Route exact path="/post-login">
+          <Route path="/post-login">
             <PostLogin />
           </Route>
           <Route exact path="/">

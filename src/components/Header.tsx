@@ -13,8 +13,6 @@ import {
 import { Route } from "react-router-dom";
 import { book, person } from "ionicons/icons";
 
-import michael from "./img/michael.jpg";
-
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
@@ -44,8 +42,9 @@ export const Header: React.FC = () => {
         <IonHeader>
           <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
-
-            <h2 className="hallo">Hallo {userInfos.first_name} </h2>
+            {userInfos && (
+              <h2 className="hallo">Hallo {userInfos.first_name} </h2>
+            )}
           </IonTitle>
         </IonHeader>
       </IonToolbar>
@@ -70,8 +69,7 @@ export const Header: React.FC = () => {
           <IonFabButton color="secondary">
             <IonAvatar class="Avatar">
               <img
-                src={michael}
-                //src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
                 alt="2bild"
               />
             </IonAvatar>

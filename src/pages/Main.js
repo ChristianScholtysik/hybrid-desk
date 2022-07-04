@@ -17,8 +17,7 @@ import Rooms from "../components/Rooms";
 import { Redirect } from "react-router";
 
 const Main = () => {
-  // const [userInfo, setUserInfo] = useState(null);
-  const { isAuthenticated, location, room, selectedSeat, date } =
+  const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
     useContext(AuthContext);
 
   // const handleClick = async () => {
@@ -34,9 +33,9 @@ const Main = () => {
   //   }
 
   return (
-    <>
-      {isAuthenticated ? (
-        <IonPage>
+    <IonPage>
+      {isAuthenticated && userInfos ? (
+        <>
           <Header />
 
           <Swiper
@@ -58,11 +57,12 @@ const Main = () => {
             <SwiperSlide>{room && <Seats />}</SwiperSlide>
             <SwiperSlide>{selectedSeat && <Overview />}</SwiperSlide>
           </Swiper>
-        </IonPage>
+        </>
       ) : (
-        <Redirect to="/" />
+        // <Redirect to="/" />
+        <h1>You are not logged in</h1>
       )}
-    </>
+    </IonPage>
   );
 };
 export default Main;
