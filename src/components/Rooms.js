@@ -22,28 +22,27 @@ const Rooms = () => {
     //mit der response könnt ihr dann den flooprlan anzeigen
   };
   return (
-    <IonContent>
-      <div className="container">
-        <IonTitle className="headline">What do you need?</IonTitle>
-        <div className="container"></div>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
-              <IonButton id="workplace" onClick={handleClick}>
-                Workplace
-              </IonButton>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonButton id="meetingroom" onClick={handleClick}>
-                Meetingroom
-              </IonButton>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </div>
-    </IonContent>
+    <div className="container">
+      <IonTitle className="headline">What do you need?</IonTitle>
+      <div className="container"></div>
+      <IonGrid>
+        <IonRow>
+          <IonCol>
+            <IonButton id="workplace" onClick={handleClick}>
+              Workplace
+            </IonButton>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol>
+            <IonButton id="meetingroom" onClick={handleClick}>
+              Meetingroom
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+      <div className="arrow bounce"></div>
+    </div>
   );
 };
 export default Rooms;
