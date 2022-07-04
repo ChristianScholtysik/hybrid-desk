@@ -75,11 +75,6 @@ export const Header: React.FC = () => {
             </IonAvatar>
           </IonFabButton>
           <IonFabList side="bottom">
-            <IonRouterOutlet>
-              <Route exact path="/post-login">
-                <PostLogin />
-              </Route>
-            </IonRouterOutlet>
             <IonFabButton href="/post-login">
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>

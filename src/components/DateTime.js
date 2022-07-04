@@ -26,7 +26,7 @@ const DateTime = () => {
           presentation="date"
           // minuteValues="0,15,30,45"
           isDateEnabled={isWeekday}
-          showDefaultButtons={true}
+          // showDefaultButtons={true}
           min="2022-01-01"
           max="2222-12-31"
           onIonChange={(e) => {
