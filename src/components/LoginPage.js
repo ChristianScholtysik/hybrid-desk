@@ -12,8 +12,7 @@ const LoginPage = () => {
 
   const {
     isAuthenticated,
-    setIsAuthenticated,
-    setUserInfos,
+
     userInfos,
     handleLogin,
   } = useContext(AuthContext);
