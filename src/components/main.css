@@ -151,6 +151,11 @@
   width: 200px;
 }
 
+/* .button:active,
+.button:focus {
+  background-color: #d41ba3 !important;
+} */
+
 .seatcontainer {
   width: 50%;
   align-content: center;

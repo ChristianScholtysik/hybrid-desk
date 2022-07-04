@@ -41,31 +41,33 @@ function Seats() {
 
   return (
     <>
-      {places.length > 0 ? (
-        <div className="grid-container">
-          {places.map((place) => (
-            <div key={place._id}>
-              {!place.unavailable ? (
-                //Button freier sitzplat
+      <div>
+        {places.length > 0 ? (
+          <div className="grid-container">
+            {places.map((place) => (
+              <div key={place._id}>
+                {!place.unavailable ? (
+                  //Button freier sitzplat
 
-                <button
-                  className="deskicon"
-                  onClick={() => setSelectedSeat(place._id)}
-                >
-                  {place.seat}
-                </button>
-              ) : (
-                //Button belegter sietzplatz
+                  <button
+                    className="deskicon"
+                    onClick={() => setSelectedSeat(place._id)}
+                  >
+                    {place.seat}
+                  </button>
+                ) : (
+                  //Button belegter sietzplatz
 
-                <button className="deskiconnodesk">{place.seat}</button>
-              )}
-            </div>
-          ))}
-        </div>
-      ) : (
-        "No available seats in your selected location"
-      )}
-      <div className="arrow bounce"></div>
+                  <button className="deskiconnodesk">{place.seat}</button>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          "No available seats in your selected location"
+        )}
+        <div className="arrow bounce"></div>
+      </div>{" "}
     </>
   );
 }

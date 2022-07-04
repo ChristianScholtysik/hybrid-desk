@@ -59,54 +59,52 @@ const Overview = () => {
   // }
   //   };
   return (
-    <IonContent className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="container">
-          <IonTitle className="headline">Your Booking Overview</IonTitle>
+    <form onSubmit={handleSubmit}>
+      <div className="container">
+        <IonTitle className="headline">Your Booking Overview</IonTitle>
 
-          <IonGrid>
-            <IonCol>
-              <IonRow>
-                <IonList>
-                  <IonItem>
-                    <IonIcon slot="start" color="primary" icon={person} />
-                    <IonLabel>
-                      <h2>User</h2>
-                      <p>{userInfos.first_name}</p>
-                    </IonLabel>
-                  </IonItem>
-                  <IonItem>
-                    <IonIcon slot="start" color="primary" icon={navigate} />
-                    <IonLabel>
-                      <h2>Location</h2>
-                      <p>{location}</p>
-                    </IonLabel>
-                  </IonItem>
+        <IonGrid>
+          <IonCol>
+            <IonRow>
+              <IonList>
+                <IonItem>
+                  <IonIcon slot="start" color="primary" icon={person} />
+                  <IonLabel>
+                    <h2>User</h2>
+                    <p>{userInfos.first_name}</p>
+                  </IonLabel>
+                </IonItem>
+                <IonItem>
+                  <IonIcon slot="start" color="primary" icon={navigate} />
+                  <IonLabel>
+                    <h2>Location</h2>
+                    <p>{location}</p>
+                  </IonLabel>
+                </IonItem>
 
-                  <IonItem>
-                    <IonIcon slot="start" icon={alarm} color="primary" />
+                <IonItem>
+                  <IonIcon slot="start" icon={alarm} color="primary" />
 
-                    <IonLabel>
-                      <h2>Date </h2>
-                      <p>{date}</p>
-                    </IonLabel>
-                  </IonItem>
+                  <IonLabel>
+                    <h2>Date </h2>
+                    <p>{date}</p>
+                  </IonLabel>
+                </IonItem>
 
-                  <IonItem>
-                    <IonIcon slot="start" icon={home} color="primary" />
-                    <IonLabel>
-                      <h2>Seat/Meetingroom</h2>
-                      <p>{selectedSeat.seat}</p>
-                    </IonLabel>
-                  </IonItem>
-                  <IonButton type="submit">Send</IonButton>
-                </IonList>
-              </IonRow>
-            </IonCol>
-          </IonGrid>
-        </div>
-      </form>
-    </IonContent>
+                <IonItem>
+                  <IonIcon slot="start" icon={home} color="primary" />
+                  <IonLabel>
+                    <h2>Seat/Meetingroom</h2>
+                    <p>{selectedSeat.seat}</p>
+                  </IonLabel>
+                </IonItem>
+                <IonButton type="submit">Send</IonButton>
+              </IonList>
+            </IonRow>
+          </IonCol>
+        </IonGrid>
+      </div>
+    </form>
   );
 };
 export default Overview;
