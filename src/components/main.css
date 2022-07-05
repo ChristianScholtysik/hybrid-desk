@@ -202,9 +202,10 @@
 }
 .headline {
   font-weight: 900;
-  font-size: 5em;
+  font-size: 2em !important;
   color: #000000;
   text-transform: uppercase !important;
+  letter-spacing: 0.09em;
 }
 
 .button {
@@ -299,11 +300,12 @@ body {
   padding: 0;
 }
 
-.headline {
+/* .headline {
+  text-transform: uppercase;
   font-size: larger;
   font-weight: bolder;
   letter-spacing: 0.09em;
-}
+} */
 
 .swiper {
   width: 100%;

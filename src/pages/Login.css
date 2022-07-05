@@ -11,11 +11,13 @@
   font-size: 20px;
   line-height: 26px;
 }
+
 .headline {
-  font-weight: 800;
-  font-size: larger;
-  color: #4dbfd6;
-  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 5em;
+  color: #000000;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em;
 }
 
 .top-headline {

@@ -55,9 +55,7 @@ const App: React.FC = () => (
           <Route path="/main">
             <Main />
           </Route>
-          {/* <Route path="/post-login">
-            <PostLogin />
-          </Route> */}
+
           <Route path="/me">
             <Me />
           </Route>
@@ -81,10 +79,6 @@ const App: React.FC = () => (
             <IonIcon icon={rocket} />
             <IonLabel>Booking</IonLabel>
           </IonTabButton>
-          {/* <IonTabButton tab="profile" href="/post-login">
-            <IonIcon icon={person} />
-            <IonLabel>Profile</IonLabel>
-          </IonTabButton> */}
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
