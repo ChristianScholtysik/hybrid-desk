@@ -15,7 +15,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
-import SuccessMessage from "./Modal";
+import SuccessMessage from "./SuccessMessage";
 
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
