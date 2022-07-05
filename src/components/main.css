@@ -202,10 +202,10 @@
 }
 .headline {
   font-weight: 900;
-  font-size: 2em !important;
+  font-size: 1.4em !important;
   color: #000000;
   text-transform: uppercase !important;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.05em;
 }
 
 .button {
