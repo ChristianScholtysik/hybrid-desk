@@ -2,10 +2,22 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
-import { IonItem, IonLabel, IonInput, IonButton, IonTitle } from "@ionic/react";
+import "../components/main.css";
+import { happy } from "ionicons/icons";
+import Logo from "../components/img/HDisk_Logo.svg";
+import {
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonInput,
+  IonButton,
+  IonTitle,
+  IonHeader,
+  IonToolbar,
+  IonContent,
+} from "@ionic/react";
 // import { IonButton, IonLabel, IonInput, IonItem } from "@ionic/react";
 
-import "./main.css";
 // import { image } from "ionicons/icons";
 
 const Signup = () => {
@@ -38,7 +50,31 @@ const Signup = () => {
     }
   };
 
-  if (isAuthenticated) return <Redirect to="../main" />;
+  if (isAuthenticated)
+    return (
+      <>
+        <IonContent className="container">
+          <IonToolbar color="primary">
+            <IonHeader>
+              <IonTitle>
+                <img src={Logo} alt="Logo" className="logo" />
+              </IonTitle>
+            </IonHeader>
+          </IonToolbar>
+          <div className="container">
+            <IonTitle className="headline">
+              You are logged in
+              <br />
+              <IonIcon color="primary" icon={happy} size="large" />
+            </IonTitle>
+          </div>
+        </IonContent>
+      </>
+    );
+
+  // {
+  //   /* <Redirect to="../main" />; */
+  // }
 
   return (
     <div className="container">
@@ -96,52 +132,52 @@ const Signup = () => {
 
 export default Signup;
 
-{
-  /* // <>
-    //   <div className="container">
-    //     <form onSubmit={handleSubmit}>
-    //       <IonItem>
-    //         <IonLabel position="floating" first_name>
-    //           <p>Firstname</p>
-    //         </IonLabel>
-    //         <IonInput />
-    //       </IonItem>
-    //       <IonItem>
-    //         <IonLabel position="floating" last_name>
-    //           <p>Lastname</p>
-    //         </IonLabel>
-    //         <IonInput />
-    //       </IonItem>
-    //       <IonItem>
-    //         <IonLabel position="floating" email>
-    //           <p>Email</p>
-    //         </IonLabel>
-    //         <IonInput type="email" />
-    //       </IonItem>
-    //       <IonItem>
-    //         <IonLabel position="floating" password>
-    //           <p>Password</p>
-    //         </IonLabel>
-    //         <IonInput type="password" />
-    //       </IonItem>
-    //       {/* Image Upload Component */
-}
-{
-  /* //       <IonLabel position="start">
-    //         <p>Upload Profile Picture</p>
-    //       </IonLabel>
-    //       <IonItem>
-    //         <IonInput type="file" />
-    //       </IonItem>
-    //       {/* <UploadAvatar /> */
-}
-{
-  /* //       <IonButton className="ion-margin-top" type="submit">
-    //         Sign Up
-    //       </IonButton>
-    //     </form> */
-}
-{
-  /* //   
-    // </> */
-}
+// {
+//   /* // <>
+//     //   <div className="container">
+//     //     <form onSubmit={handleSubmit}>
+//     //       <IonItem>
+//     //         <IonLabel position="floating" first_name>
+//     //           <p>Firstname</p>
+//     //         </IonLabel>
+//     //         <IonInput />
+//     //       </IonItem>
+//     //       <IonItem>
+//     //         <IonLabel position="floating" last_name>
+//     //           <p>Lastname</p>
+//     //         </IonLabel>
+//     //         <IonInput />
+//     //       </IonItem>
+//     //       <IonItem>
+//     //         <IonLabel position="floating" email>
+//     //           <p>Email</p>
+//     //         </IonLabel>
+//     //         <IonInput type="email" />
+//     //       </IonItem>
+//     //       <IonItem>
+//     //         <IonLabel position="floating" password>
+//     //           <p>Password</p>
+//     //         </IonLabel>
+//     //         <IonInput type="password" />
+//     //       </IonItem>
+//     //       {/* Image Upload Component */
+// }
+// {
+//   /* //       <IonLabel position="start">
+//     //         <p>Upload Profile Picture</p>
+//     //       </IonLabel>
+//     //       <IonItem>
+//     //         <IonInput type="file" />
+//     //       </IonItem>
+//     //       {/* <UploadAvatar /> */
+// }
+// {
+//   /* //       <IonButton className="ion-margin-top" type="submit">
+//     //         Sign Up
+//     //       </IonButton>
+//     //     </form> */
+// }
+// {
+//   /* //
+//     // </> */
+// }

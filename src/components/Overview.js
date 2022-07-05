@@ -17,7 +17,6 @@ import axios from "axios";
 
 import SuccessMessage from "./SuccessMessage";
 
-
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
 // aus diesen infomationen setzt ihr eine post request zusammen (infos im body,

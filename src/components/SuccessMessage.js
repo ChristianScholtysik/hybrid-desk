@@ -17,7 +17,7 @@ function SuccessMessage() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Reservation created</IonTitle>
+          <IonTitle className="headline">Reservation created</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

@@ -15,9 +15,10 @@
 }
 .headline {
   font-weight: 900;
-  font-size: 2em;
+  font-size: 5em;
   color: #000000;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em;
 }
 
 .top-headline {
