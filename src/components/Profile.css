@@ -1,0 +1,10 @@
+.IonItem::part(imageupload) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  height: 200px;
+}
+
+button {
+  width: 36px;
+}
