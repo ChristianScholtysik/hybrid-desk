@@ -17,6 +17,7 @@ import axios from "axios";
 
 import SuccessMessage from "./SuccessMessage";
 
+
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
 // aus diesen infomationen setzt ihr eine post request zusammen (infos im body,
@@ -47,10 +48,8 @@ const Overview = () => {
     };
     axios
       .post(
-
         // `https://hybrid-desk.herokuapp.com/reservation/${userInfos._id}`,
         `http://localhost:5000/reservation/${userInfos._id}`,
-
 
         createReservation
       )
