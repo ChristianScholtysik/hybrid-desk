@@ -212,13 +212,13 @@
   width: 200px;
 }
 
-.button:focus {
+/* .button:focus {
   background-color: #d41ba3 !important;
 }
 
 .button:active {
   background-color: #d41ba3 !important;
-}
+} */
 
 /* .button:active,
 .button:focus {

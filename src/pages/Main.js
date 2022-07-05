@@ -14,7 +14,7 @@ import DateTime from "../components/DateTime";
 import Overview from "../components/Overview";
 import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
-import History from "../components/History";
+import NotLoggedIn from "../components/NotLoggedIn";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
@@ -59,7 +59,10 @@ const Main = () => {
           </Swiper>
         </>
       ) : (
-        // <Redirect to="/" />
+        //  <Redirect to="/" />
+        // <>
+        //   <NotLoggedIn />
+        // </>
         <h1>You are not logged in</h1>
       )}
     </IonPage>
