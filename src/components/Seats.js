@@ -54,7 +54,7 @@ function Seats() {
 
                   <button
                     className="deskicon"
-                    onClick={() => setSelectedSeat(place._id)}
+                    onClick={() => setSelectedSeat(place)}
                   >
                     {place.seat}
                   </button>

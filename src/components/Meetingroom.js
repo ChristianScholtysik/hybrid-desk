@@ -24,7 +24,7 @@ function Meetingroom({ meetingrooms }) {
 
                   <button
                     className="meetingicon"
-                    onClick={() => setSelectedSeat(place._id)}
+                    onClick={() => setSelectedSeat(place)}
                   >
                     {/* console.log(room.meetingnumber); */}
                     {place.seat}

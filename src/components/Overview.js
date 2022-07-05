@@ -45,9 +45,8 @@ const Overview = () => {
     };
     axios
       .post(
-
         // `https://hybrid-desk.herokuapp.com/reservation/${userInfos._id}`,
-
+        `http://localhost:5000/reservation/${userInfos._id}`,
 
         createReservation
       )
@@ -99,7 +98,7 @@ const Overview = () => {
                   <IonIcon slot="start" icon={home} color="primary" />
                   <IonLabel>
                     <h2>Seat/Meetingroom</h2>
-                    <p>{selectedSeat.seat_id}</p>
+                    <p>{selectedSeat.seat}</p>
                   </IonLabel>
                 </IonItem>
                 <IonButton type="submit">Send</IonButton>
