@@ -16,6 +16,7 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Main from "./pages/Main";
 import PostLogin from "./pages/PostLogin";
+import History from "./components/History";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -55,6 +56,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/post-login">
             <PostLogin />
+          </Route>
+          <Route path="/history">
+            <History />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />
