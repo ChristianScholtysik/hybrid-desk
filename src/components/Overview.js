@@ -11,9 +11,12 @@ import {
 } from "@ionic/react";
 import { alarm, home, navigate, person } from "ionicons/icons";
 import "./main.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Example from "./Modal";
 
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
@@ -24,7 +27,7 @@ import axios from "axios";
 const Overview = () => {
   const { userInfos, location, date, room, selectedSeat, selectedMeeting } =
     useContext(AuthContext);
-
+  const [status, setStatus] = useState(undefined);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -50,8 +53,15 @@ const Overview = () => {
 
         createReservation
       )
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error));
+      // .then((response) => console.log(response.data))
+      // .catch((error) => console.log(error));
+
+      .then(() => {
+        setStatus({ type: "success" });
+      })
+      .catch((error) => {
+        setStatus({ type: "error", error });
+      });
   };
 
   // der endpunkt: http://localhost:5000/reservation/62bc0ab5b4436aa68e17f46b/
@@ -61,8 +71,12 @@ const Overview = () => {
   // "date": "2022-06-30"
   // }
   //   };
+
   return (
     <form onSubmit={handleSubmit}>
+      {status?.type === "success" && <Example />}
+      {status?.type === "error" && <p>"Reservation could not be created"</p>}
+
       <div className="container">
         <IonTitle className="headline">Your Overview</IonTitle>
 
