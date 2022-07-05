@@ -4,15 +4,29 @@ import {
   IonItem,
   IonInput,
   IonButton,
+  IonGrid,
+  IonList,
+  IonCol,
+  IonLabel,
+  IonTitle,
+  IonIcon,
+  IonRow,
 } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-
+import { alarm, home, navigate, person } from "ionicons/icons";
 import Header from "../components/Header";
 import ProfileImage from "../components/ProfileImage";
 // import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 // import "../components/main.css";
+import "./PostLogin.css";
+import Profile from "../components/Profile";
+
 const PostLogin = () => {
   //Wenn User authentifiziert, wird Header Component angezeigt
   //Wenn User nicht eingeloggt, zur Landing Page navigieren
@@ -25,7 +39,22 @@ const PostLogin = () => {
       {isAuthenticated && userInfos ? (
         <>
           <Header />
-          <IonContent className="grid-container">
+
+          <Swiper
+            direction={"vertical"}
+            pagination={{
+              clickable: true,
+            }}
+            // modules={[Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Profile />
+            </SwiperSlide>
+          </Swiper>
+
+          {/*
+            </div>
             <ProfileImage />
             <IonItem>
               <IonInput type="file" />
@@ -42,8 +71,7 @@ const PostLogin = () => {
             Email: {userInfos.email}{" "}
             <IonButton className="ion-margin-top">Change Email</IonButton>
             <br />
-            <h1>Du bist eingeloggt und kannst buchen</h1>
-          </IonContent>
+            <h1>Du bist eingeloggt und kannst buchen</h1> */}
         </>
       ) : (
         // <Redirect to="/login" />
