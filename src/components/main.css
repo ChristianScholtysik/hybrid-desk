@@ -35,6 +35,24 @@
   font-size: 30px;
 }
 
+/* seat container */
+.grid-container-meeting {
+  display: grid;
+  /* grid-template-columns: auto auto auto auto; */
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px;
+}
+
+.grid-container-meeting > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 5px 0;
+  font-size: 30px;
+}
+
 /* seat icons*/
 .deskicon {
   background: url(../components/img/freedesk.svg);
@@ -70,6 +88,44 @@
   color: white;
   text-align: center;
   padding-left: 18px;
+}
+
+.meetingicon {
+  background: url(../components/img/bigmeeting_free.svg);
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+  width: 150px;
+  height: 200px;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: white;
+  /* text-align: right; */
+  /* padding-left: 18px; */
+}
+
+.meetingicon:focus {
+  background: url(../components/img/bigmeeting_hover.svg);
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+  width: 150px;
+  height: 200px;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.meetingiconnodesk {
+  background: url(../components/img/bigmeeting_reserved.svg);
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+  width: 150px;
+  height: 200px;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: white;
 }
 
 .box {

@@ -39,7 +39,7 @@ function Seats() {
     getAvailableSeats();
   }, [date, bookingUrl, room]);
 
-  if (room == "meetingroom") return <Meetingroom />;
+  if (room == "meetingroom") return <Meetingroom meetingrooms={places} />;
 
   return (
     <>
@@ -76,41 +76,3 @@ function Seats() {
 }
 
 export default Seats;
-
-// {
-//   /* <>
-//       {places.length > 0 ? (
-//         <>
-//           {places.map((place) => (
-//             <div key={place._id}>
-//               {!place.unavailable ? (
-//                 //Button freier sitzplat
-//                 <button
-//                   className="btn"
-//                   onClick={() => setSelectedSeat(place._id)}
-//                 >
-//                   {place.seat}
-//                 </button>
-//               ) : (
-//                 //Button belegter sietzplatz
-//                 <button className="btnUnavailable">{place.seat} </button>
-//               )}
-//             </div>
-//           ))}
-//         </>
-//       ) : (
-//         "No available seats in your selected location"
-//       )}
-//     </> */
-// }
-
-// {
-//   /* <div key={place._id}>
-//                   <button
-//                     className="btn"
-//                     onClick={() => setSelectedSeat(place._id)}
-//                   >
-//                     {place.seat} frei
-//                   </button>
-//                 </div> */
-// }
