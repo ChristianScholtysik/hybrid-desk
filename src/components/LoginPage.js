@@ -2,8 +2,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
-import "./main.css";
-import { IonInput, IonLabel, IonItem, IonButton } from "@ionic/react";
+import "../components/main.css";
+import {
+  IonInput,
+  IonLabel,
+  IonItem,
+  IonButton,
+  IonTitle,
+  IonContent,
+} from "@ionic/react";
 
 const LoginPage = () => {
   //bei Form Submit post request an die API schicken
@@ -46,21 +53,28 @@ const LoginPage = () => {
   if (isAuthenticated && userInfos) return <Redirect to="../post-login" />;
 
   return (
-    <form onSubmit={handleLogin}>
-      <IonItem>
-        <IonLabel position="floating" htmlFor="email">
-          Email
-        </IonLabel>
-        <IonInput type="text" id="email" name="email"></IonInput>
-      </IonItem>
-      <IonItem>
-        <IonLabel position="floating" htmlFor="inputPassword">
-          Password
-        </IonLabel>
-        <IonInput type="password" id="inputPassword" name="password"></IonInput>
-      </IonItem>
-      <IonButton type="submit">Login</IonButton>
-    </form>
+    <div className="container">
+      <form onSubmit={handleLogin}>
+        <IonTitle className="headline">Please Login</IonTitle>
+        <IonItem className="label">
+          <IonLabel position="floating" htmlFor="email">
+            Email
+          </IonLabel>
+          <IonInput type="text" id="email" name="email"></IonInput>
+        </IonItem>
+        <IonItem className="label">
+          <IonLabel position="floating" htmlFor="inputPassword">
+            Password
+          </IonLabel>
+          <IonInput
+            type="password"
+            id="inputPassword"
+            name="password"
+          ></IonInput>
+        </IonItem>
+        <IonButton type="submit">Login</IonButton>
+      </form>
+    </div>
   );
 };
 

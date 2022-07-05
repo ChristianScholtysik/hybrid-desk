@@ -1,22 +1,23 @@
 import axios from "axios";
-
+import { IonTitle } from "@ionic/react";
 import { useContext, useState, useEffect } from "react";
-
+import Meetingroom from "./Meetingroom";
 import { AuthContext } from "../context/AuthContext";
 
 import "./main.css";
 
 function Seats() {
   const [places, setPlaces] = useState([]);
-  const { bookingUrl, setSelectedSeat, date } = useContext(AuthContext);
+  const { bookingUrl, setSelectedSeat, date, room } = useContext(AuthContext);
 
   useEffect(() => {
+    console.log(room);
     const getAvailableSeats = () => {
       axios
         .get(bookingUrl)
         .then((response) => {
-          console.log(response.data);
-          console.log(date);
+          //console.log(response.data);
+          //console.log(date);
           for (let i = 0; i < response.data.length; i++) {
             console.log(response.data[i].unavailable);
             const unavailable = response.data[i].unavailable.find(
@@ -31,16 +32,19 @@ function Seats() {
             }
           }
           setPlaces(response.data);
-          console.log(response.data);
+          //console.log(response.data);
         })
         .catch((error) => console.error(`error: ${error}`));
     };
     getAvailableSeats();
-  }, [date, bookingUrl]);
+  }, [date, bookingUrl, room]);
+
+  if (room == "meetingroom") return <Meetingroom />;
 
   return (
     <>
       <div>
+        <IonTitle className="headline">It's yours! </IonTitle>
         {places.length > 0 ? (
           <div className="grid-container">
             {places.map((place) => (

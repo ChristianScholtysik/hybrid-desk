@@ -1,4 +1,4 @@
-import { IonDatetime } from "@ionic/react";
+import { IonDatetime, IonTitle } from "@ionic/react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import "./main.css";
@@ -20,6 +20,7 @@ const DateTime = () => {
   return (
     <>
       <div>
+        <IonTitle className="headline">WHEN?</IonTitle>
         <IonDatetime
           color="primary"
           // displayFormat="YYYY-MM-DD"
