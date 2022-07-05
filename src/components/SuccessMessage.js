@@ -10,7 +10,7 @@ import {
   IonPage,
 } from "@ionic/react";
 
-function Example() {
+function SuccessMessage() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -42,4 +42,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default SuccessMessage;
