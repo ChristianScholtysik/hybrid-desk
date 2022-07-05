@@ -14,8 +14,6 @@ import "./main.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Example from "./Modal";
 
 // den context importieren & konsumieren und location, datetime, meetingraum oder
@@ -48,10 +46,8 @@ const Overview = () => {
     };
     axios
       .post(
-
         // `https://hybrid-desk.herokuapp.com/reservation/${userInfos._id}`,
         `http://localhost:5000/reservation/${userInfos._id}`,
-
 
         createReservation
       )

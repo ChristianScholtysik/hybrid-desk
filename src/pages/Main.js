@@ -1,4 +1,10 @@
-import { IonPage } from "@ionic/react";
+import {
+  IonPage,
+  IonContent,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+} from "@ionic/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Location from "../components/Location";
 import { AuthContext } from "../context/AuthContext";
@@ -14,7 +20,9 @@ import DateTime from "../components/DateTime";
 import Overview from "../components/Overview";
 import Seats from "../components/Seats";
 import Rooms from "../components/Rooms";
-import NotLoggedIn from "../components/NotLoggedIn";
+import "./Login.css";
+import "../components/main.css";
+import Logo from "../components/img/HDisk_Logo.svg";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
@@ -59,11 +67,28 @@ const Main = () => {
           </Swiper>
         </>
       ) : (
-        //  <Redirect to="/" />
+        // <Redirect to="/notlogged" />
         // <>
-        //   <NotLoggedIn />
+        // <NotLogged />
         // </>
-        <h1>You are not logged in</h1>
+        // <h1>Plase login or signup</h1>
+        <>
+          <IonContent className="container">
+            <IonToolbar color="primary">
+              <IonHeader>
+                <IonTitle>
+                  <img src={Logo} alt="Logo" className="logo" />
+                </IonTitle>
+              </IonHeader>
+            </IonToolbar>
+            <div className="container">
+              <IonTitle className="healdine">
+                Please <a href="/login">Login</a> or
+                <a href="/registration"> Sign-Up</a>
+              </IonTitle>
+            </div>
+          </IonContent>
+        </>
       )}
     </IonPage>
   );
