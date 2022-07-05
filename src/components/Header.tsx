@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
             </IonFabButton>
             <div className="profile_button"></div>
 
-            <IonFabButton>
+            <IonFabButton href="/history">
               <IonIcon icon={book} className="button-icon" />
             </IonFabButton>
             <div className="history_button"></div>
