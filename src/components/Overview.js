@@ -14,9 +14,8 @@ import "./main.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Example from "./Modal";
+
+import SuccessMessage from "./Modal";
 
 // den context importieren & konsumieren und location, datetime, meetingraum oder
 // sitzplatz undseatid/number verfügbar machen (aus context/global state)
@@ -74,7 +73,7 @@ const Overview = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {status?.type === "success" && <Example />}
+      {status?.type === "success" && <SuccessMessage />}
       {status?.type === "error" && <p>"Reservation could not be created"</p>}
 
       <div className="container">
