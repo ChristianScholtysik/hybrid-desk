@@ -10,7 +10,7 @@ import {
   IonIcon,
 } from "@ionic/react";
 // import { Route } from "react-router-dom";
-import { book, person } from "ionicons/icons";
+import { person } from "ionicons/icons";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
@@ -74,15 +74,15 @@ export const Header: React.FC = () => {
             </IonAvatar>
           </IonFabButton>
           <IonFabList side="bottom">
-            <IonFabButton href="/post-login">
+            <IonFabButton href="/me">
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
             <div className="profile_button"></div>
 
-            <IonFabButton href="/history">
+            {/* <IonFabButton href="/me">
               <IonIcon icon={book} className="button-icon" />
             </IonFabButton>
-            <div className="history_button"></div>
+            <div className="history_button"></div> */}
           </IonFabList>
         </IonFab>
       </IonContent>
