@@ -7,42 +7,40 @@ import { AuthContext } from "../context/AuthContext";
 
 import "./main.css";
 
-function Meetingroom() {
-  const [places, setPlaces] = useState([]);
-  const { bookingUrl, setSelectedMeeting, date } = useContext(AuthContext);
+function Meetingroom({ meetingrooms }) {
+  const { setSelectedSeat } = useContext(AuthContext);
 
   return (
     <>
       <div>
-        Meetingrooms hier
-        {/* {places.length > 14 ? (
-          <div className="grid-container">
-            {places.map((place) => (
+        <IonTitle className="headline">It's yours! </IonTitle>
+        {/* Meetingrooms hier */}
+        {meetingrooms.length > 0 ? (
+          <div className="grid-container-meeting">
+            {meetingrooms.map((place) => (
               <div key={place._id}>
                 {!place.unavailable ? (
                   //Button freier sitzplat
 
                   <button
                     className="meetingicon"
-                    onClick={() => setSelectedMeeting(place._id)}
+                    onClick={() => setSelectedSeat(place._id)}
                   >
-                    console.log(place.meetingnumber);
-                    {place.meetingnumber}
+                    {/* console.log(room.meetingnumber); */}
+                    {place.seat}
                   </button>
                 ) : (
                   //Button belegter sietzplatz
 
-                  <button className="meetingiconnodesk">
-                    {place.meetingnumber}
-                  </button>
+                  <button className="meetingiconnodesk">{place.seat}</button>
                 )}
               </div>
             ))}
           </div>
         ) : (
-          "No available seats in your selected location"
+          "No available meetingroom in your selected location"
         )}
-        <div className="arrow bounce"></div> */}
+        <div className="arrow bounce"></div>
       </div>
     </>
   );

@@ -22,7 +22,7 @@ import axios from "axios";
 // createreservation endpunkt
 
 const Overview = () => {
-  const { userInfos, location, date, room, selectedSeat } =
+  const { userInfos, location, date, room, selectedSeat, selectedMeeting } =
     useContext(AuthContext);
 
   const handleSubmit = async (e) => {
@@ -34,12 +34,14 @@ const Overview = () => {
       location,
       date,
       room,
-      selectedSeat
+      selectedSeat,
+      selectedMeeting
     );
 
     const createReservation = {
       date: date,
       place_id: selectedSeat,
+      // place_id: selectedMeeting,
     };
     axios
       .post(

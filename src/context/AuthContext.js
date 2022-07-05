@@ -19,6 +19,7 @@ const AuthState = ({ children }) => {
   const [date, setDate] = useState(null);
   const [room, setRoom] = useState(null);
   const [userInfos, setUserInfos] = useState(null);
+  const [selectedMeeting, setSelectedMeeting] = useState(null);
 
   useEffect(() => {
     const checkIfTokenValid = async () => {
@@ -81,6 +82,8 @@ const AuthState = ({ children }) => {
         setLocation,
         selectedSeat,
         setSelectedSeat,
+        selectedMeeting,
+        setSelectedMeeting,
         date,
         setDate,
         room,
