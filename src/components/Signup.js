@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Redirect } from "react-router-dom";
 import "../components/main.css";
 import { happy } from "ionicons/icons";
 import Logo from "../components/img/HDisk_Logo.svg";
@@ -16,15 +15,9 @@ import {
   IonToolbar,
   IonContent,
 } from "@ionic/react";
-// import { IonButton, IonLabel, IonInput, IonItem } from "@ionic/react";
-
-// import { image } from "ionicons/icons";
 
 const Signup = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  //bei Form Submit post request an die API schicken
-  //token, den wir zurückbekommen in localStorage speichern
-  //bei erfolgreichem Signup auf die /post-login route navigieren
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +35,7 @@ const Signup = () => {
         loginData
       );
       const token = res.headers.authorization;
-      //token im localStorage speichern
+
       localStorage.setItem("token", token);
       setIsAuthenticated(true);
     } catch (error) {
@@ -66,15 +59,15 @@ const Signup = () => {
               You are logged in
               <br />
               <IonIcon color="primary" icon={happy} size="large" />
+              <br />
+              <IonButton className="button" href="./main">
+                Go to Booking
+              </IonButton>
             </IonTitle>
           </div>
         </IonContent>
       </>
     );
-
-  // {
-  //   /* <Redirect to="../main" />; */
-  // }
 
   return (
     <div className="container">
@@ -131,53 +124,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-// {
-//   /* // <>
-//     //   <div className="container">
-//     //     <form onSubmit={handleSubmit}>
-//     //       <IonItem>
-//     //         <IonLabel position="floating" first_name>
-//     //           <p>Firstname</p>
-//     //         </IonLabel>
-//     //         <IonInput />
-//     //       </IonItem>
-//     //       <IonItem>
-//     //         <IonLabel position="floating" last_name>
-//     //           <p>Lastname</p>
-//     //         </IonLabel>
-//     //         <IonInput />
-//     //       </IonItem>
-//     //       <IonItem>
-//     //         <IonLabel position="floating" email>
-//     //           <p>Email</p>
-//     //         </IonLabel>
-//     //         <IonInput type="email" />
-//     //       </IonItem>
-//     //       <IonItem>
-//     //         <IonLabel position="floating" password>
-//     //           <p>Password</p>
-//     //         </IonLabel>
-//     //         <IonInput type="password" />
-//     //       </IonItem>
-//     //       {/* Image Upload Component */
-// }
-// {
-//   /* //       <IonLabel position="start">
-//     //         <p>Upload Profile Picture</p>
-//     //       </IonLabel>
-//     //       <IonItem>
-//     //         <IonInput type="file" />
-//     //       </IonItem>
-//     //       {/* <UploadAvatar /> */
-// }
-// {
-//   /* //       <IonButton className="ion-margin-top" type="submit">
-//     //         Sign Up
-//     //       </IonButton>
-//     //     </form> */
-// }
-// {
-//   /* //
-//     // </> */
-// }

@@ -14,10 +14,8 @@ const Location = () => {
   const { bookingUrl, setBookingUrl, setLocation } = useContext(AuthContext);
 
   const handleClick = (e) => {
-    // navigate("/");
-
     console.log(`${bookingUrl}?location=${e.target.id}`);
-    setBookingUrl(`${bookingUrl}?location=${e.target.id}`); //? leitet query params ein, alle weiteren werden mit & verkettet
+    setBookingUrl(`${bookingUrl}?location=${e.target.id}`);
     setLocation(e.target.id);
   };
 

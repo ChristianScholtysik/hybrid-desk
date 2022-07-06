@@ -1,7 +1,6 @@
-import axios from "axios";
-import { IonContent, IonGrid, IonTitle, IonCol } from "@ionic/react";
+import { IonTitle } from "@ionic/react";
 
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 
 import { AuthContext } from "../context/AuthContext";
 
@@ -14,24 +13,19 @@ function Meetingroom({ meetingrooms }) {
     <>
       <div>
         <IonTitle className="headline">It's yours! </IonTitle>
-        {/* Meetingrooms hier */}
+
         {meetingrooms.length > 0 ? (
           <div className="grid-container-meeting">
             {meetingrooms.map((place) => (
               <div key={place._id}>
                 {!place.unavailable ? (
-                  //Button freier sitzplat
-
                   <button
                     className="meetingicon"
                     onClick={() => setSelectedSeat(place)}
                   >
-                    {/* console.log(room.meetingnumber); */}
                     {place.seat}
                   </button>
                 ) : (
-                  //Button belegter sietzplatz
-
                   <button className="meetingiconnodesk">{place.seat}</button>
                 )}
               </div>

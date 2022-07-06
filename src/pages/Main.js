@@ -4,7 +4,9 @@ import {
   IonHeader,
   IonToolbar,
   IonTitle,
+  IonIcon,
 } from "@ionic/react";
+import { key, lockOpen } from "ionicons/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Location from "../components/Location";
 import { AuthContext } from "../context/AuthContext";
@@ -23,22 +25,11 @@ import Rooms from "../components/Rooms";
 import "./Login.css";
 import "../components/main.css";
 import Logo from "../components/img/HDisk_Logo.svg";
+import DarkMode from "../components/DarkMode";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
     useContext(AuthContext);
-
-  // const handleClick = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/info/me`, {
-  //       headers: { token: token },
-  //     });
-  //     setUserInfo(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
 
   return (
     <IonPage>
@@ -67,11 +58,6 @@ const Main = () => {
           </Swiper>
         </>
       ) : (
-        // <Redirect to="/notlogged" />
-        // <>
-        // <NotLogged />
-        // </>
-        // <h1>Plase login or signup</h1>
         <>
           <IonContent className="container">
             <IonToolbar color="primary">
@@ -82,9 +68,16 @@ const Main = () => {
               </IonHeader>
             </IonToolbar>
             <div className="container">
-              <IonTitle className="healdine">
-                Please <a href="/login">Login</a> or
-                <a href="/registration"> Sign-Up</a>
+              <IonTitle className="headline">
+                Please <br />
+                <a href="/login">
+                  Login
+                  <IonIcon icon={lockOpen} />
+                </a>
+                &nbsp; or &nbsp;
+                <a href="/registration">
+                  Sign-Up <IonIcon icon={key} />
+                </a>
               </IonTitle>
             </div>
           </IonContent>

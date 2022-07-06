@@ -11,8 +11,6 @@ const Logout = () => {
   };
 
   return (
-    //Wenn angemeldet, Logout Button zeigen, der local Storage cleart & isAuthenticated zu false setzt
-    //Wenn nicht angemeldet, entsprechenden Text zeigen
     <div className="d-flex justify-content-center mt-4">
       {isAuthenticated ? (
         <button onClick={handleClick} className="btn btn-primary">

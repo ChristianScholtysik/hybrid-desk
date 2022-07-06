@@ -15,23 +15,12 @@ import {
 } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { navigate, person, mailOpen, cloudUpload, image } from "ionicons/icons";
-import Header from "../components/Header";
-import ProfileImage from "../components/ProfileImage";
-// import axios from "axios";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { person, mailOpen, cloudUpload } from "ionicons/icons";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import "../components/main.css";
 import "./Header.css";
 import "./main.css";
 
 const Profile = () => {
-  //Wenn User authentifiziert, wird Header Component angezeigt
-  //Wenn User nicht eingeloggt, zur Landing Page navigieren
-
   const { isAuthenticated, userInfos } = useContext(AuthContext);
   console.log(userInfos);
 
@@ -53,7 +42,6 @@ const Profile = () => {
                         icon={cloudUpload}
                       />
                       <IonLabel>
-                        {/* <ProfileImage /> */}{" "}
                         <IonAvatar class="Avatar2">
                           <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
@@ -61,11 +49,7 @@ const Profile = () => {
                             className="Avatar2"
                           />
                         </IonAvatar>
-                        {/* <IonIcon
-                          slot="start"
-                          icon={cloudUpload}
-                          color="primary"
-                        /> */}
+
                         <IonInput type="file" />
                         <IonButton className="button">
                           Upload Profile Image
@@ -95,28 +79,6 @@ const Profile = () => {
                         <IonButton className="button">Change</IonButton>
                       </IonLabel>
                     </IonItem>
-                    {/* <div>
-                      <ProfileImage />
-                    </div> */}
-                    {/* <IonItem>
-                      <IonIcon
-                        slot="start"
-                        icon={cloudUpload}
-                        color="primary"
-                      />
-                      <IonLabel>
-                        <IonInput type="file" />
-                        <IonButton>Upload Profile Image</IonButton>
-                      </IonLabel>
-                    </IonItem> */}
-                    {/* <IonItem>
-                      <IonIcon slot="start" icon={home} color="primary" />
-                      <IonLabel>
-                        <h2>Seat/Meetingroom</h2>
-                        <p></p>
-                      </IonLabel>
-                    </IonItem> 
-                     <IonButton type="submit">Send</IonButton> */}
                   </IonList>
                 </IonRow>
               </IonCol>
@@ -124,7 +86,6 @@ const Profile = () => {
           </IonContent>
         </>
       ) : (
-        // <Redirect to="/login" />
         <h1>You are not logged in</h1>
       )}
     </IonPage>
