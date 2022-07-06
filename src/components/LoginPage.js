@@ -19,15 +19,9 @@ import {
 // import Logo from "../components/img/HDisk_Logo.svg";
 
 const LoginPage = () => {
-  const {
-    isAuthenticated,
+  const { isAuthenticated, userInfos, handleLogin } = useContext(AuthContext);
 
-    userInfos,
-    handleLogin,
-  } = useContext(AuthContext);
-
-  if (isAuthenticated && userInfos) return;
-  <Redirect to="../main" />;
+  if (isAuthenticated && userInfos) return <Redirect to="../main" />;
   // <>
   //   <IonContent className="container">
   //     <IonToolbar color="primary">
