@@ -34,7 +34,7 @@ ionic serve
 
 ------------
 
-### planned Features
+### Upcoming Features
 - ProfileImage Upload
 - Booking History
 - DarkMode
