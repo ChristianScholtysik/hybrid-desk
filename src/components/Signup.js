@@ -1,19 +1,20 @@
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { Redirect } from "react-router";
 import "../components/main.css";
-import { happy } from "ionicons/icons";
-import Logo from "../components/img/HDisk_Logo.svg";
+// import { happy } from "ionicons/icons";
+// import Logo from "../components/img/HDisk_Logo.svg";
 import {
   IonItem,
-  IonIcon,
+  // IonIcon,
   IonLabel,
   IonInput,
   IonButton,
   IonTitle,
-  IonHeader,
-  IonToolbar,
-  IonContent,
+  // IonHeader,
+  // IonToolbar,
+  // IonContent,
 } from "@ionic/react";
 
 const Signup = () => {
@@ -43,10 +44,9 @@ const Signup = () => {
     }
   };
 
-  if (isAuthenticated)
-    return (
-      <>
-        <IonContent className="container">
+  if (isAuthenticated) return;
+  <Redirect to="../main" />;
+  /* <IonContent className="container">
           <IonToolbar color="primary">
             <IonHeader>
               <IonTitle>
@@ -66,8 +66,7 @@ const Signup = () => {
             </IonTitle>
           </div>
         </IonContent>
-      </>
-    );
+      </> */
 
   return (
     <div className="container">
