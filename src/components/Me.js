@@ -3,7 +3,7 @@ import "../components/main.css";
 import Logo from "../components/img/HDisk_Logo.svg";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import {
   IonButton,
   IonContent,
@@ -18,7 +18,7 @@ import {
   IonLabel,
   IonList,
   IonAvatar,
-  IonTextarea,
+  IonInput,
 } from "@ionic/react";
 
 import { person, mailOpen } from "ionicons/icons";
@@ -26,63 +26,35 @@ import { person, mailOpen } from "ionicons/icons";
 import "./main.css";
 
 import Header from "../components/Header";
-import SuccessMessage from "./SuccessMessage";
 
 const Me = () => {
-  const { isAuthenticated, userInfos } = useContext(AuthContext);
-  console.log(userInfos);
-  const [status, setStatus] = useState(undefined);
+  const { isAuthenticated, userInfos, setUserInfos } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const updateUser = {
-      first_name: userInfos.first_name.value,
-      last_name: userInfos.last_name.value,
-      email: userInfos.email.value,
-      // place_id: selectedMeeting,
+      first_name: e.target.first_name.value,
+      last_name: e.target.last_name.value,
+      email: e.target.email.value,
     };
+    console.log(e.target.first_name.value);
     axios
       .put(
-        // `https://hybrid-desk.herokuapp.com/reservation/${userInfos._id}`,
+        // `https://hybrid-desk.herokuapp.com/user/${userInfos._id}`,
         `http://localhost:5000/user/${userInfos._id}`,
         updateUser
       )
-      // .then((response) => console.log(response.data))
-      // .catch((error) => console.log(error));
+      .then((response) => setUserInfos(response.data))
 
-      .then(() => {
-        this.setStatus({ type: "success" });
-      })
-      .catch((error) => {
-        setStatus({ type: "error", error });
-      });
-
-    // Bin mir nicht sicher ob man irgendwo handleChange noch einbinden muss
-    // const handleChange = (event) => {
-    //   this.setState({ userInfos: userInfos.target.value });
-    // };
+      .catch((error) => console.log(error));
   };
-  // const token = localStorage.getItem("token");
-  // console.log(token);
-  // try {
-  //   const res = await axios.put(`${process.env.REACT_APP_API_URL}/info/me`, {
-  //     headers: { token: token },
-  //   });
-  //   setUserInfo(res.data);
-  // } catch (error) {
-  //   console.log(error);
-  // }
 
   return (
     <>
+      <Header />
       {isAuthenticated && userInfos ? (
         <>
-          <Header />
           <form onSubmit={handleSubmit}>
-            {/* {status?.type === "success" && <SuccessMessage />}
-            {status?.type === "error" && (
-              <p>"Reservation could not be created"</p>
-            )} */}
             <div className="container">
               <IonTitle className="headline">Your Profile</IonTitle>
 
@@ -91,14 +63,13 @@ const Me = () => {
                   <IonRow>
                     <IonList>
                       <IonItem>
-                        <IonAvatar slot="start" class="Avatar2">
+                        <IonAvatar slot="start" className="Avatar2">
                           <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
                             alt="profile"
                           />
                         </IonAvatar>
                         <IonLabel>
-                          {/* <IonInput type="file" /> */}
                           <IonButton className="button">
                             Upload/Edit Image
                           </IonButton>
@@ -109,34 +80,53 @@ const Me = () => {
                       <br />
                       <IonItem>
                         <IonIcon slot="start" color="primary" icon={person} />{" "}
-                        <IonLabel position="floating">First Name</IonLabel>
-                        <IonTextarea
-                          value={userInfos.first_name}
-                          onChange={userInfos.handleChange}
+                        <IonLabel position="floating">
+                          {userInfos.first_name}
+                        </IonLabel>
+                        <IonInput
+                          name="first_name"
+                          type="text"
+                          placeholder={userInfos.first_name}
+                          required="true"
                         >
                           {userInfos.first_name.value}
-                        </IonTextarea>
+                        </IonInput>
                       </IonItem>
-                      {/* <IonLabel>
-                          <h2>{userInfos.first_name}</h2>{" "}
-                          <IonIcon slot="end" color="primary" icon={person} />
-                        </IonLabel> */}
+
                       <IonItem>
-                        <IonIcon slot="start" color="primary" icon={person} />{" "}
-                        <IonLabel position="floating">Last Name</IonLabel>
-                        <IonTextarea value={userInfos.last_name}></IonTextarea>
+                        <IonIcon slot="start" color="primary" icon={person} />
+                        <IonLabel position="floating">
+                          {userInfos.last_name}
+                        </IonLabel>
+                        <IonInput
+                          name="last_name"
+                          type="text"
+                          placeholder={userInfos.last_name}
+                          required="true"
+                        >
+                          {userInfos.last_name.value}
+                        </IonInput>
                       </IonItem>
                       <IonItem>
-                        <IonIcon slot="start" color="primary" icon={mailOpen} />{" "}
-                        <IonLabel position="floating">Email</IonLabel>
-                        <IonTextarea value={userInfos.email}></IonTextarea>
+                        <IonIcon slot="start" color="primary" icon={mailOpen} />
+                        <IonLabel position="floating">
+                          {userInfos.email}
+                        </IonLabel>
+                        <IonInput
+                          name="email"
+                          type="text"
+                          placeholder={userInfos.email}
+                          required="true"
+                        >
+                          {userInfos.email.value}
+                        </IonInput>
                       </IonItem>
                     </IonList>
                   </IonRow>
                 </IonCol>
                 <IonButton type="submit">Send</IonButton>
               </IonGrid>
-            </div>{" "}
+            </div>
           </form>
         </>
       ) : (

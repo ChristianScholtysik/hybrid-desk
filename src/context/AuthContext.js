@@ -1,16 +1,11 @@
 import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 
-//Wenn die Komponente initial mountet,
-//checken, ob es einen token gibt
-//wenn nein setIsAutheticated zu false setzen
-//wenn ja,  req and die api schicken, setIsAutheticated zu true
-
 export const AuthContext = createContext();
 
 const AuthState = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
-  //base URL um neue Reservierung anzulegen (soll POST request an diesen Endpunkt schicken)
+
   const [bookingUrl, setBookingUrl] = useState(
     `${process.env.REACT_APP_API_URL}/place`
   );
@@ -60,7 +55,7 @@ const AuthState = ({ children }) => {
       );
 
       const token = res.headers.authorization;
-      //token im localStorage speichern
+
       localStorage.setItem("token", token);
       setUserInfos(res.data);
       console.log("jetzt user infos");

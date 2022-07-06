@@ -17,12 +17,6 @@ import axios from "axios";
 
 import SuccessMessage from "./SuccessMessage";
 
-// den context importieren & konsumieren und location, datetime, meetingraum oder
-// sitzplatz undseatid/number verfügbar machen (aus context/global state)
-// aus diesen infomationen setzt ihr eine post request zusammen (infos im body,
-// userid aus params) und schickt sie an
-// createreservation endpunkt
-
 const Overview = () => {
   const { userInfos, location, date, room, selectedSeat, selectedMeeting } =
     useContext(AuthContext);
@@ -32,7 +26,7 @@ const Overview = () => {
 
     console.log(
       userInfos._id,
-      // userInfos.first_name,
+
       location,
       date,
       room,
@@ -43,7 +37,6 @@ const Overview = () => {
     const createReservation = {
       date: date,
       place_id: selectedSeat,
-      // place_id: selectedMeeting,
     };
     axios
       .post(
@@ -52,8 +45,6 @@ const Overview = () => {
 
         createReservation
       )
-      // .then((response) => console.log(response.data))
-      // .catch((error) => console.log(error));
 
       .then(() => {
         setStatus({ type: "success" });
@@ -62,14 +53,6 @@ const Overview = () => {
         setStatus({ type: "error", error });
       });
   };
-
-  // der endpunkt: http://localhost:5000/reservation/62bc0ab5b4436aa68e17f46b/
-  // user_id sollte dynamisch sein
-  // der req body muss so sein: {
-  // "place_id":"62bc4ffe237eae711a978840",
-  // "date": "2022-06-30"
-  // }
-  //   };
 
   return (
     <form onSubmit={handleSubmit}>

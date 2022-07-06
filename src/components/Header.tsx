@@ -9,31 +9,17 @@ import {
   IonAvatar,
   IonIcon,
 } from "@ionic/react";
-// import { Route } from "react-router-dom";
+
 import { person } from "ionicons/icons";
 
 import Logo from "./img/HDisk_Logo.svg";
 import "./main.css";
 import "./Header.css";
-// import PostLogin from "../pages/PostLogin";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 
 export const Header: React.FC = () => {
   const { userInfos } = useContext(AuthContext);
-
-  // const user = async () => {
-  //   const token = localStorage.getItem("token");
-  //   console.log(token);
-  //   try {
-  //     const res = await axios.get(`${process.env.REACT_APP_API_URL}/:id`, {
-  //       // headers: { token: token },
-  //     });
-  //     setUserInfo(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <>
@@ -41,6 +27,7 @@ export const Header: React.FC = () => {
         <IonHeader>
           <IonTitle>
             <img src={Logo} alt="Logo" className="logo" />
+
             {userInfos && (
               <h2 className="hallo">Hallo {userInfos.first_name} </h2>
             )}
@@ -49,15 +36,6 @@ export const Header: React.FC = () => {
       </IonToolbar>
 
       <IonContent fullscreen>
-        {/* <IonItem lines="none">
-          <IonIcon slot="start" icon={moon} /> */}
-        {/* <IonLabel>Dark Mode</IonLabel> */}
-        {/* <IonToggle
-            slot="start"
-            name="darkMode"
-            onIonChange={toggleDarkModeHandler}
-          />
-        </IonItem> */}
         <IonFab
           color="secondary"
           vertical="top"
@@ -78,11 +56,6 @@ export const Header: React.FC = () => {
               <IonIcon icon={person} className="button-icon" />
             </IonFabButton>
             <div className="profile_button"></div>
-
-            {/* <IonFabButton href="/me">
-              <IonIcon icon={book} className="button-icon" />
-            </IonFabButton>
-            <div className="history_button"></div> */}
           </IonFabList>
         </IonFab>
       </IonContent>

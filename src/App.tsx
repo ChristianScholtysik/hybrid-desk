@@ -15,8 +15,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Main from "./pages/Main";
-// import PostLogin from "./pages/PostLogin";
-// import History from "./components/History";
+
 import Me from "./components/Me";
 
 /* Core CSS required for Ionic components to work properly */
@@ -59,9 +58,7 @@ const App: React.FC = () => (
           <Route path="/me">
             <Me />
           </Route>
-          {/* <Route path="/history">
-            <History />
-          </Route> */}
+
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>

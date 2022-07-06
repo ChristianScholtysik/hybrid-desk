@@ -1,54 +1,54 @@
-import axios from "axios";
-import { AuthContext } from "../context/AuthContext";
-import { useState, useEffect, useContext } from "react";
-import { IonContent, IonPage } from "@ionic/react";
-import Header from "./Header";
+// import axios from "axios";
+// import { AuthContext } from "../context/AuthContext";
+// import { useState, useEffect, useContext } from "react";
+// import { IonContent, IonPage } from "@ionic/react";
+// import Header from "./Header";
 
-const History = () => {
-  const { userInfos, location, date, room, selectedSeat } =
-    useContext(AuthContext);
-  const [history, setHistory] = useState([]);
-  const getSingleHistory = () => {
-    axios
-      .get(`http://localhost:5000/reservation/${userInfos._id}`)
-      .then((response) => {
-        console.log(response);
-        const myHistory = response.data;
-        setHistory(myHistory);
-      });
+// const History = () => {
+//   const [userBooking, setUserBooking] = useState([]);
+//   const { userInfos, location, date, room, selectedSeat } =
+//     useContext(AuthContext);
 
-    // useEffect(() => getSingleHistory(), []);
-  };
+//   // console.log(room);
+//   const getUserReservation = () => {
+//     axios
+//       .get(`http://localhost:5000/reservation/${userInfos._id}`)
+//       .then((response) => {
+//         // console.log(response.data);
+//         //console.log(date);
 
-  //   const { userInfos, location, date, room, selectedSeat } =
-  //     useContext(AuthContext);
-  // };
+//         setUserBooking(response.data);
+//         //console.log(response.data);
+//       })
+//       .catch((error) => console.error(`error: ${error}`));
+//   };
+//   getUserReservation();
 
-  // console.log(
-  //   userInfos._id,
-  //   // userInfos.first_name,
-  //   location,
-  //   date,
-  //   room,
-  //   selectedSeat
-  // );
-  //   };
-  //   axios
-  //     .get(`http://localhost:5000/reservation/${userInfos._id}`)
-  //     .then((response) => console.log(response.data))
-  //     .catch((error) => console.log(error));
+//   //   const { userInfos, location, date, room, selectedSeat } =
+//   //     useContext(AuthContext);
+//   // };
 
-  return (
-    <IonPage>
-      <Header />
-      <IonContent>
-        <h2>Titel</h2>
-        {history.map((data) => (
-          <li>{data.id}</li>
-        ))}
-      </IonContent>
-    </IonPage>
-  );
-};
+//   // console.log(
+//   //   userInfos._id,
+//   //   // userInfos.first_name,
+//   //   location,
+//   //   date,
+//   //   room,
+//   //   selectedSeat
+//   // );
+//   //   };
+//   //   axios
+//   //     .get(`http://localhost:5000/reservation/${userInfos._id}`)
+//   //     .then((response) => console.log(response.data))
+//   //     .catch((error) => console.log(error));
 
-export default History;
+//   return (
+//     <IonPage>
+//       <Header />
+//       <IonContent>
+//         <h2>Titel</h2>
+//       </IonContent>
+//     </IonPage>
+//   );
+// };
+// export default History;
