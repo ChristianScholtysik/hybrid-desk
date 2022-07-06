@@ -44,8 +44,7 @@ const Signup = () => {
     }
   };
 
-  if (isAuthenticated) return;
-  <Redirect to="../main" />;
+  if (isAuthenticated) return <Redirect to="../main" />;
   /* <IonContent className="container">
           <IonToolbar color="primary">
             <IonHeader>
