@@ -1,21 +1,22 @@
 // import { IonTitle, IonButton, IonItem, IonLabel, IonInput } from "@ionic/react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { Redirect } from "react-router";
 
 import "../components/main.css";
 import {
   IonInput,
-  IonToolbar,
-  IonHeader,
+  // IonToolbar,
+  // IonHeader,
   IonLabel,
   IonItem,
   IonButton,
   IonTitle,
-  IonContent,
-  IonIcon,
+  // IonContent,
+  // IonIcon,
 } from "@ionic/react";
-import { happy } from "ionicons/icons";
-import Logo from "../components/img/HDisk_Logo.svg";
+// import { happy } from "ionicons/icons";
+// import Logo from "../components/img/HDisk_Logo.svg";
 
 const LoginPage = () => {
   const {
@@ -25,31 +26,30 @@ const LoginPage = () => {
     handleLogin,
   } = useContext(AuthContext);
 
-  if (isAuthenticated && userInfos)
-    return (
-      <>
-        <IonContent className="container">
-          <IonToolbar color="primary">
-            <IonHeader>
-              <IonTitle>
-                <img src={Logo} alt="Logo" className="logo" />
-              </IonTitle>
-            </IonHeader>
-          </IonToolbar>
-          <div className="container">
-            <IonTitle className="headline">
-              You are logged in
-              <br />
-              <IonIcon color="primary" icon={happy} size="large" />
-              <br />
-              <IonButton className="button" href="./main">
-                Go to Booking
-              </IonButton>
-            </IonTitle>
-          </div>
-        </IonContent>
-      </>
-    );
+  if (isAuthenticated && userInfos) return;
+  <Redirect to="../main" />;
+  // <>
+  //   <IonContent className="container">
+  //     <IonToolbar color="primary">
+  //       <IonHeader>
+  //         <IonTitle>
+  //           <img src={Logo} alt="Logo" className="logo" />
+  //         </IonTitle>
+  //       </IonHeader>
+  //     </IonToolbar>
+  //     <div className="container">
+  //       <IonTitle className="headline">
+  //         You are logged in
+  //         <br />
+  //         <IonIcon color="primary" icon={happy} size="large" />
+  //         <br />
+  //         <IonButton className="button" href="./main">
+  //           Go to Booking
+  //         </IonButton>
+  //       </IonTitle>
+  //     </div>
+  //   </IonContent>
+  // </>
 
   return (
     <>
