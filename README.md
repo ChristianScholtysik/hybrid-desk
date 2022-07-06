@@ -1,11 +1,11 @@
 # Hybrid Desk - Frontend
 
-
 ------------
 
-
 ## Description
-App to book workplaces and Meetingrooms in a Coworking-Space
+Creating an App to book workplaces and meetingrooms in a Coworking-Space
+
+------------
 
 ### Built With
 - library: REACT
@@ -16,14 +16,31 @@ App to book workplaces and Meetingrooms in a Coworking-Space
 
 ------------
 
-
 ### Installation
 npm i 
 
+------------
 
 ### Start the App
 ionic serve
 
+------------
+
+### Features
+- Login
+- Signup
+- Seat/MeetingroomPicker
+- Profile with Possibility to change FirstName, LastName, Email
+
+------------
+
+### planned Features
+- ProfileImage Upload
+- Booking History
+- DarkMode
+- LogOut (currently autologout after 1h)
+
+------------
 
 ### Link
 published on Netlify:
@@ -31,7 +48,6 @@ published on Netlify:
 https://hybrid-desk.netlify.app/me
 
 ------------
-
 
 #### Authors
 
