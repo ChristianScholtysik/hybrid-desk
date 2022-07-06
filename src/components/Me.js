@@ -40,8 +40,9 @@ const Me = () => {
     console.log(e.target.first_name.value);
     axios
       .put(
-        // `https://hybrid-desk.herokuapp.com/user/${userInfos._id}`,
-        `http://localhost:5000/user/${userInfos._id}`,
+        `${process.env.REACT_APP_API_URL}/user/${userInfos._id}`,
+
+        // `http://localhost:5000/user/${userInfos._id}`,
         updateUser
       )
       .then((response) => setUserInfos(response.data))

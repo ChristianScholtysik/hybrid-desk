@@ -25,7 +25,6 @@ import Rooms from "../components/Rooms";
 import "./Login.css";
 import "../components/main.css";
 import Logo from "../components/img/HDisk_Logo.svg";
-import DarkMode from "../components/DarkMode";
 
 const Main = () => {
   const { isAuthenticated, location, room, selectedSeat, date, userInfos } =
