@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   IonButton,
   IonIcon,
@@ -10,8 +9,6 @@ import { thumbsUp } from "ionicons/icons";
 import "./main.css";
 
 function SuccessMessage() {
-  // const [isOpen, setIsOpen] = useState(false);
-
   return (
     <IonPage>
       <IonContent className="ion-padding">
