@@ -36,7 +36,7 @@ function Seats() {
     getAvailableSeats();
   }, [date, bookingUrl, room]);
 
-  if (room == "meetingroom") return <Meetingroom meetingrooms={places} />;
+  if (room === "meetingroom") return <Meetingroom meetingrooms={places} />;
 
   return (
     <>
